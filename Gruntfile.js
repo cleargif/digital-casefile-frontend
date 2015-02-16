@@ -179,23 +179,23 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       },
       test: {
         devDependencies: true,
         src: '<%= karma.unit.configFile %>',
-        ignorePath:  /\.\.\//,
-        fileTypes:{
+        ignorePath: /\.\.\//,
+        fileTypes: {
           js: {
             block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
-              detect: {
-                js: /'(.*\.js)'/gi
-              },
-              replace: {
-                js: '\'{{filePath}}\','
-              }
+            detect: {
+              js: /'(.*\.js)'/gi
+            },
+            replace: {
+              js: '\'{{filePath}}\','
             }
           }
+        }
       }
     },
 
@@ -355,6 +355,18 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          dest: '<%= yeoman.dist %>',
+          cwd: 'heroku',
+          src: '*',
+          rename: function (dest, src) {
+            var path = require('path');
+            if (src === 'distpackage.json') {
+              return path.join(dest, 'package.json');
+            }
+            return path.join(dest, src);
+          }
         }]
       },
       styles: {
@@ -379,12 +391,17 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+    shell: {
+      deploy: {
+        command: 'cd dist && git commit -am "Build" && git push heroku master'
+      }
+    },
 
     // Test settings
     karma: {
       unit: {
         configFile: 'test/karma.conf.js',
-        singleRun: false
+        singleRun: true
       }
     }
   });
@@ -441,4 +458,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('deploy', ['build', 'shell:deploy']);
 };

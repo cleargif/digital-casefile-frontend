@@ -17,7 +17,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'LocalStorageModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -33,7 +34,17 @@ angular
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })
+      .when('/casefile', {
+        templateUrl: 'views/casefile.html',
+        controller: 'CasefileCtrl'
+      })
+      .when('/contactsheet', {
+        templateUrl: 'views/contactsheet.html',
+        controller: 'ContactsheetCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).config(['localStorageServiceProvider', function (localStorageServiceProvider) {
+    localStorageServiceProvider.setPrefix('ls');
+  }]);

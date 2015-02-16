@@ -1,26 +1,22 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: CasefileCtrl', function () {
 
   // load the controller's module
   beforeEach(module('digitalCasefileApp'));
 
-  var AboutCtrl,
+  var CasefileCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    CasefileCtrl = $controller('CasefileCtrl', {
       $scope: scope
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
     expect(scope.awesomeThings.length).toBe(3);
-  });
-
-  it('should work', function() {
-    expect(2===2).toBe(true);
   });
 });

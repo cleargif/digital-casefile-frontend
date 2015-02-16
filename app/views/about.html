@@ -1,1 +1,10 @@
-<p>This is the about view.</p>
+<p>This is the about view heroku about.</p>
+
+<ul>
+  <li ng-repeat="todo in todos">
+    {{todo.name}} || <a ng-click="removeTodo($index)">delete</a>
+  </li>
+</ul>
+
+<input type="text" ng-model="todo.name">
+<button ng-click="addTodo(todo)">submit</button>
