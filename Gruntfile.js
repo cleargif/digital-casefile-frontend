@@ -342,6 +342,7 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
+            'scripts/directives/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
           ]
@@ -393,7 +394,9 @@ module.exports = function (grunt) {
     },
     shell: {
       deploy: {
-        command: 'cd dist && git commit -am "Build" && git push heroku master'
+        command: function(){
+          return 'cd dist && git add . && git commit -a -m "Build :: '+ Date() +'" && git push heroku master';
+        }
       }
     },
 
