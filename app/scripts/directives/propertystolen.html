@@ -1,106 +1,110 @@
-<div class="propertystolen">
-  <form role="form">
+<div id="propertystolen" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Property stolen</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form">
 
-    <div class="form-group">
-      <label for="name">Item</label>
-      <input type="text" class="form-control" id="name" placeholder="eg leather coat">
+      <div class="form-group">
+        <label for="name">Item</label>
+        <input type="text" class="form-control" id="name" placeholder="eg leather coat">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Description</label>
+        <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Value</label>
+        <input type="text" class="form-control" id="name" placeholder="eg £50.00">
+      </div>
+
+      <div class="form-group">
+        <label>Property recovered?</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="q1" value="yes" class="js-Conditional" data-conditional-el="q2" aria-control="q2"> Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="q1" value="no" class="js-Conditional" data-conditional-el="q5" aria-control="q5"> No
+          </label>
+        </div>
+      </div>
+    </form>
+
+    <div id="q2" aria-expanded="true" aria-hidden="false" style="display: block;">
+      <form role="form">
+        <div class="form-group">
+          <label>Saleable condition?</label>
+          <div>
+            <label class="radio-inline">
+             <input type="radio" name="q2" value="yes" class="js-Conditional"> Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="q2" value="no" class="js-Conditional"> No
+            </label>
+          </div>
+        </div>
+      </form>
+      <form role="form">
+        <div class="form-group">
+          <label>Compensation requested?</label>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="q3" value="yes" class="js-Conditional" data-conditional-el="q4" aria-control="q4"> Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="q3" value="no" class="js-Conditional"> No
+            </label>
+          </div>
+        </div>
+      </form>
     </div>
 
-    <div class="form-group">
-      <label for="name">Description</label>
-      <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
+    <div id="q4" aria-expanded="true" aria-hidden="false" style="display: block;">
+      <form role="form">
+        <div class="form-group">
+          <label>Amount</label>
+          <div>
+            <input type="text" class="form-control" placeholder="eg £50.00">
+          </div>
+        </div>
+      </form>
     </div>
 
-    <div class="form-group">
-      <label for="name">Value</label>
-      <input type="text" class="form-control" id="name" placeholder="eg £50.00">
+    <div id="q5" aria-expanded="true" aria-hidden="false" style="display: block;">
+      <form role="form">
+        <div class="form-group">
+          <label>Actions being taken</label>
+          <div>
+            <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Compensation requested?</label>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="q5" value="yes" class="js-Conditional" data-conditional-el="q6" aria-control="q6"> Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="q5" value="no" class="js-Conditional"> No
+            </label>
+          </div>
+        </div>
+      </form>
     </div>
 
-    <div class="form-group">
-      <label>Property recovered?</label>
-      <div>
-        <label class="radio-inline">
-          <input type="radio" name="q1" value="yes" class="js-Conditional" data-conditional-el="q2" aria-control="q2"> Yes
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="q1" value="no" class="js-Conditional" data-conditional-el="q5" aria-control="q5"> No
-        </label>
-      </div>
+    <div id="q6" aria-expanded="false" aria-hidden="true" style="display: none;">
+      <form role="form">
+        <div class="form-group">
+          <label>Amount</label>
+          <div>
+            <input type="text" class="form-control" placeholder="eg £50.00">
+          </div>
+        </div>
+      </form>
     </div>
 
-  </form>
-
-  <div id="q2" aria-expanded="true" aria-hidden="false" style="display: block;">
-    <form role="form">
-      <div class="form-group">
-        <label>Saleable condition?</label>
-        <div>
-          <label class="radio-inline">
-           <input type="radio" name="q2" value="yes" class="js-Conditional"> Yes
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="q2" value="no" class="js-Conditional"> No
-          </label>
-        </div>
-      </div>
-    </form>
-    <form role="form">
-      <div class="form-group">
-        <label>Compensation requested?</label>
-        <div>
-          <label class="radio-inline">
-            <input type="radio" name="q3" value="yes" class="js-Conditional" data-conditional-el="q4" aria-control="q4"> Yes
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="q3" value="no" class="js-Conditional"> No
-          </label>
-        </div>
-      </div>
-    </form>
   </div>
-
-  <div id="q4" aria-expanded="true" aria-hidden="false" style="display: block;">
-    <form role="form">
-      <div class="form-group">
-        <label>Amount</label>
-        <div>
-          <input type="text" class="form-control" placeholder="eg £50.00">
-        </div>
-      </div>
-    </form>
-  </div>
-
-  <div id="q5" aria-expanded="true" aria-hidden="false" style="display: block;">
-    <form role="form">
-      <div class="form-group">
-        <label>Actions being taken</label>
-        <div>
-          <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Compensation requested?</label>
-        <div>
-          <label class="radio-inline">
-            <input type="radio" name="q5" value="yes" class="js-Conditional" data-conditional-el="q6" aria-control="q6"> Yes
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="q5" value="no" class="js-Conditional"> No
-          </label>
-        </div>
-      </div>
-    </form>
-  </div>
-
-  <div id="q6" aria-expanded="false" aria-hidden="true" style="display: none;">
-    <form role="form">
-      <div class="form-group">
-        <label>Amount</label>
-        <div>
-          <input type="text" class="form-control" placeholder="eg £50.00">
-        </div>
-      </div>
-    </form>
-  </div>
-
 </div>

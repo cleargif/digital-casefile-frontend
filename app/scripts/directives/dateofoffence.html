@@ -1,40 +1,45 @@
-<div class="dateofoffence">
-  <form role="form">
-    <div class="form group" "row"="">
-      <label for="name">Date of offence</label>
+<div id="dateofoffence" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Date of offence</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form">
+      <div class="form group" "row"="">
+        <label for="name">Date of offence</label>
+        <br />
+        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Day" />
+        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Month" />
+        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Year" />
+      </div>
+
       <br />
-      <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Day" />
-      <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Month" />
-      <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Year" />
-    </div>
 
-    <br />
+      <div class="form-group" "row"="">
+        <label for="name">Time of offence</label>
+        <br />
+        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Hour" />
+        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Minutes" />
+        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Seconds" />
+      </div>
 
-    <div class="form-group" "row"="">
-      <label for="name">Time of offence</label>
       <br />
-      <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Hour" />
-      <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Minutes" />
-      <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Seconds" />
-    </div>
 
-    <br />
+      <div class="form-group">
+        <label for="name">Premises</label>
+          <input type="text" class="form-control" id="name" placeholder="Street" />
+      </div>
 
-    <div class="form-group">
-      <label for="name">Premises</label>
-        <input type="text" class="form-control" id="name" placeholder="Street" />
-    </div>
+      <div class="form-group">
+        <label for="name"></label>
+        <input type="text" class="form-control" id="name" placeholder="Town" />
+      </div>
 
-    <div class="form-group">
-      <label for="name"></label>
-      <input type="text" class="form-control" id="name" placeholder="Town" />
-    </div>
-
-    <div class="form-group" "row"="">
-      <label for="name"></label>
-      <br />
-      <input style="min-width:1em; width:25%; display:inline-block" type="text" class="form-control" id="name" placeholder="Postcode" />
-      <button type="button" class="btn btn-default btn-sml active pull-right">Find UK address</button>
-    </div>
-  </form>
+      <div class="form-group" "row"="">
+        <label for="name"></label>
+        <br />
+        <input style="min-width:1em; width:25%; display:inline-block" type="text" class="form-control" id="name" placeholder="Postcode" />
+        <button type="button" class="btn btn-default btn-sml active pull-right">Find UK address</button>
+      </div>
+    </form>
+  </div>
 </div>

@@ -1,80 +1,84 @@
-<div class="interview">
-
-  <form role="form">
-    <div class="form-group">
-      <label>Was a legal representative present in the interview?</label>
-      <div>
-        <label class="radio-inline">
-          <input type="radio" name="q1" value="yes" class="js-Conditional" data-conditional-el="q2" aria-control="q2"> Yes
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="q1" value="no" class="js-Conditional"> No
-        </label>
-      </div>
-    </div>
-
-    <div id="q2" aria-expanded="true" aria-hidden="false" style="display: block;">
+<div id="interview" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Interview</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form">
       <div class="form-group">
-        <label>Name</label>
+        <label>Was a legal representative present in the interview?</label>
         <div>
-          <input type="text" class="form-control" placeholder="Full name">
+          <label class="radio-inline">
+            <input type="radio" name="q1" value="yes" class="js-Conditional" data-conditional-el="q2" aria-control="q2"> Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="q1" value="no" class="js-Conditional"> No
+          </label>
         </div>
       </div>
-      <div class="form-group">
-        <label>Firm of solicitors</label>
-        <div>
-          <input type="text" class="form-control" placeholder="Full name">
+
+      <div id="q2" aria-expanded="true" aria-hidden="false" style="display: block;">
+        <div class="form-group">
+          <label>Name</label>
+          <div>
+            <input type="text" class="form-control" placeholder="Full name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Firm of solicitors</label>
+          <div>
+            <input type="text" class="form-control" placeholder="Full name">
+          </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
 
-  <form role="form">
-    <div class="form-group">
-      <label>Did suspect require an interpreter?</label>
-      <div>
-        <label class="radio-inline">
-          <input type="radio" name="q3" value="yes" class="js-Conditional" data-conditional-el="q4" aria-control="q4"> Yes
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="q3" value="no" class="js-Conditional"> No
-        </label>
-      </div>
-    </div>
-
-    <div id="q4" aria-expanded="true" aria-hidden="false" style="display: block;">
+    <form role="form">
       <div class="form-group">
-        <label>Language</label>
+        <label>Did suspect require an interpreter?</label>
         <div>
-          <select class="form-control">
-            <option>Select</option>
-            <option>Albanian</option>
-            <option>Amharic</option>
-            <option>Armenian</option>
-            <option>Arabic</option>
-            <option>Azeri</option>
-            <option>Bengali</option>
-            <option>Bosnian</option>
-            <option>British Sign Language</option>
-            <option>Bulgarian</option>
-            <option>Burmese</option>
-            <option>Catalan</option>
-            <option>Chinese (Cantonese)</option>
-            <option>Chinese (Hakka)</option>
-            <option>Chinese (Mandarin)</option>
-            <option>Croatian</option>
-          </select>
+          <label class="radio-inline">
+            <input type="radio" name="q3" value="yes" class="js-Conditional" data-conditional-el="q4" aria-control="q4"> Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="q3" value="no" class="js-Conditional"> No
+          </label>
         </div>
       </div>
-    </div>
 
-
-    <div class="form-group">
-      <label>Admissions in interview</label>
-      <div>
-        <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
+      <div id="q4" aria-expanded="true" aria-hidden="false" style="display: block;">
+        <div class="form-group">
+          <label>Language</label>
+          <div>
+            <select class="form-control">
+              <option>Select</option>
+              <option>Albanian</option>
+              <option>Amharic</option>
+              <option>Armenian</option>
+              <option>Arabic</option>
+              <option>Azeri</option>
+              <option>Bengali</option>
+              <option>Bosnian</option>
+              <option>British Sign Language</option>
+              <option>Bulgarian</option>
+              <option>Burmese</option>
+              <option>Catalan</option>
+              <option>Chinese (Cantonese)</option>
+              <option>Chinese (Hakka)</option>
+              <option>Chinese (Mandarin)</option>
+              <option>Croatian</option>
+            </select>
+          </div>
+        </div>
       </div>
-    </div>
-  </form>
 
+
+      <div class="form-group">
+        <label>Admissions in interview</label>
+        <div>
+          <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
+        </div>
+      </div>
+    </form>
+
+  </div>
 </div>
