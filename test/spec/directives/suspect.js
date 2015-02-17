@@ -16,12 +16,12 @@ describe('Directive: suspect', function () {
   beforeEach(inject(function($injector) {
     var $rootScope = $injector.get('$rootScope');
     var $compile = $injector.get('$compile');
-    var suspectData = $injector.get('suspectDataMock');
+    var casefile = $injector.get('casefileMock');
 
     parentScope = $rootScope.$new();
     var childScope = parentScope.$new();
 
-    parentScope.data = suspectData;
+    parentScope.data = casefile.suspect;
 
     var element = $compile(template)(childScope);
 
