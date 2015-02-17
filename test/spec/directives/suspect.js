@@ -6,23 +6,28 @@ describe('Directive: suspect', function () {
   beforeEach(module('digitalCasefileApp'));
   beforeEach(module('templates'));
 
-  var element,
-    scope;
+  var element, scope;
 
   beforeEach(inject(function ($rootScope, $compile) {
-    scope = $rootScope.$new();
-    element = angular.element('<suspect></suspect>');
-    element = $compile(element)(scope);
 
-    scope.$digest();
+    var parentScope = $rootScope.$new();
+    var childScope = parentScope.$new();
 
+    parentScope.data = {name:'david'};
+
+    var template = '<suspect suspect="data"></suspect>';
+    element = $compile(template)(childScope);
+
+    parentScope.$digest();
+    scope = element.isolateScope();
   }));
 
-  it('should load the template', inject(function () {
-    expect(element.hasClass('suspect')).toBe(true);
+  it('should complile the template', inject(function () {
+    //expect(element.hasClass('suspect')).toBe(true);
+    expect(element.find('form').length).toBe(1);
   }));
 
-  it('should have isolated scope', inject(function(){
-    expect(element.hasClass('ng-isolate-scope')).toBe(true);
-  }));
+  // it('should have isolated scope', inject(function(){
+  //   expect(element.hasClass('ng-isolate-scope')).toBe(true);
+  // }));
 });

@@ -14,7 +14,7 @@ angular.module('digitalCasefileApp')
       scope: {},
       replace: true,
       link: function postLink(scope, element, attrs) {
-        console.log('dateofoffence',[scope,  element, attrs]);
+        //console.log('dateofoffence',[scope,  element, attrs]);
       }
     };
   });
