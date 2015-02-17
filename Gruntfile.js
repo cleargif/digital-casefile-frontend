@@ -42,7 +42,7 @@ module.exports = function (grunt) {
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
+        tasks: ['newer:jshint:test']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -402,8 +402,19 @@ module.exports = function (grunt) {
 
     // Test settings
     karma: {
+      start: {
+        configFile: 'test/karma.conf.js',
+        options: {
+          autoWatch: true,
+          singleRun: false
+        }
+      },
       unit: {
-        configFile: 'test/karma.conf.js'
+        configFile: 'test/karma.conf.js',
+        options: {
+          autoWatch: false,
+          singleRun: true
+        }
       }
     }
   });
@@ -435,7 +446,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma:unit'
   ]);
 
   grunt.registerTask('build', [

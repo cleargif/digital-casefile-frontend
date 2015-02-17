@@ -1,29 +1,58 @@
 'use strict';
 
-fdescribe('Directive: suspect', function () {
+describe('Directive: suspect', function () {
 
   // load the directive's module
   beforeEach(module('digitalCasefileApp'));
+  beforeEach(module('mocks'));
   beforeEach(module('templates'));
 
-  var element, scope;
+  var widget;
+  var parentScope;
+  var scope;
 
-  beforeEach(inject(function ($rootScope, $compile) {
+  var template = '<suspect data="data"></suspect>';
 
-    var parentScope = $rootScope.$new(),
-      childScope = parentScope.$new(),
-      template = '<suspect data="data"></suspect>';
+  beforeEach(inject(function($injector) {
+    var $rootScope = $injector.get('$rootScope');
+    var $compile = $injector.get('$compile');
+    var suspectData = $injector.get('suspectDataMock');
 
-    element = $compile(template)(childScope);
+    parentScope = $rootScope.$new();
+    var childScope = parentScope.$new();
+
+    parentScope.data = suspectData;
+
+    var element = $compile(template)(childScope);
 
     parentScope.$digest();
-
     scope = element.isolateScope();
+
+    widget = element[0];
   }));
 
-  it('should complile the template with isolate scope', inject(function () {
-    expect(element.hasClass('suspect')).toBe(true);
-    expect(element.hasClass('ng-isolate-scope')).toBe(true);
+  it('should have a form', inject(function () {
+    expect(widget.querySelector('form')).not.toBe(null);
   }));
+
+  it('should expose suspect data to the template', function() {
+    expect(scope.suspect.fullname).toBe('john doe');
+    expect(scope.suspect.age).toBe(32);
+  });
+
+  it('should show the suspect name in the input field', function() {
+    var input = widget.querySelector('#suspect\\.fullname');
+    expect(input.value).toBe('john doe');
+  });
+
+  it('should be updated on data change', function() {
+    parentScope.data.fullname = 'Johnny Doe';
+    parentScope.$digest();
+
+    expect(scope.suspect.fullname).toBe('Johnny Doe');
+
+    var input = widget.querySelector('#suspect\\.fullname');
+    expect(input.value).toBe('Johnny Doe');
+  });
 
 });

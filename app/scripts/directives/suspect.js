@@ -12,7 +12,7 @@ angular.module('digitalCasefileApp')
       templateUrl: 'scripts/directives/suspect.html',
       restrict: 'E',
       scope: {
-        data: '='
+        suspect: '=data'
       },
       replace: true,
       link: function postLink() {
