@@ -4,25 +4,50 @@ describe('Directive: dateofoffence', function () {
 
   // load the directive's module
   beforeEach(module('digitalCasefileApp'));
+  beforeEach(module('mocks'));
   beforeEach(module('templates'));
 
-  var element,
-    scope;
+  var widget;
+  var parentScope;
+  var scope;
 
-  beforeEach(inject(function ($rootScope, $compile) {
-    scope = $rootScope.$new();
-    element = angular.element('<dateofoffence></dateofoffence>');
-    element = $compile(element)(scope);
+  var template = '<dateofoffence data="data"></dateofoffence>';
 
-    scope.$digest();
+  beforeEach(inject(function($injector) {
+    var $rootScope = $injector.get('$rootScope');
+    var $compile = $injector.get('$compile');
+    var casefile = $injector.get('casefileMock');
 
+    parentScope = $rootScope.$new();
+    var childScope = parentScope.$new();
+
+    parentScope.data = casefile.dateofoffence;
+
+    var element = $compile(template)(childScope);
+
+    parentScope.$digest();
+    scope = element.isolateScope();
+
+    widget = element[0];
   }));
 
-  it('should load the template', inject(function () {
-    expect(element.hasClass('dateofoffence')).toBe(true);
+  it('should have a form', inject(function () {
+    expect(widget.querySelector('form')).not.toBe(null);
   }));
 
-  it('should have isolated scope', inject(function(){
-    expect(element.hasClass('ng-isolate-scope')).toBe(true);
-  }));
+  // it('should show the dateofoffence name in the input field', function() {
+  //   var input = widget.querySelector('#dateofoffence\\.fullname');
+  //   expect(input.value).toBe('john doe');
+  // });
+
+  // it('should be updated on data change', function() {
+  //   parentScope.data.fullname = 'Johnny Doe';
+  //   parentScope.$digest();
+
+  //   expect(scope.dateofoffence.fullname).toBe('Johnny Doe');
+
+  //   var input = widget.querySelector('#dateofoffence\\.fullname');
+  //   expect(input.value).toBe('Johnny Doe');
+  // });
+
 });
