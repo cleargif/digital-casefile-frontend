@@ -17,7 +17,7 @@ angular.module('digitalCasefileApp')
       replace: true,
       link: function postLink() {
         //console.log('cctv link', [$scope, $element, $attrs]);
-
+        angular.element.jqReveal();
       }
     };
   });

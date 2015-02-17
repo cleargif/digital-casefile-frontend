@@ -6,17 +6,17 @@
     <form role="form">
       <div class="form-group">
         <label>Was suspect shown CCTV at above address?</label>
-        <div>
+        <div class="jqr-delegate-hook">
           <label class="radio-inline">
-            <input type="radio" name="q1" value="yes" class="js-Conditional" data-conditional-el="q2" aria-control="q2"> Yes
+            <input type="radio" name="q1" value="yes" class="js-Conditional jqr-publisher" data-jqr-publish-events="was-cctv-shown"  data-conditional-el="q2" aria-control="q2"> Yes
           </label>
           <label class="radio-inline">
-            <input type="radio" name="q1" value="no" class="js-Conditional" data-conditional-el="q4" aria-control="q4"> No
+            <input type="radio" name="q1" value="no" class="js-Conditional jqr-publisher" data-jqr-publish-events="was-cctv-shown" data-conditional-el="q4" aria-control="q4"> No
           </label>
         </div>
       </div>
 
-      <div id="q2" aria-expanded="true" aria-hidden="false" style="display: block;">
+      <div id="q2" aria-expanded="true" aria-hidden="false">
         <div class="form-group">
           <label>Suspect's comments</label>
           <div>
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div id="q3" aria-expanded="false" aria-hidden="true" style="display: none;">
+      <div id="q3" aria-expanded="false" aria-hidden="true">
         <div class="form-group">
           <label>Suspect's comments</label>
           <div>
@@ -46,27 +46,27 @@
         </div>
       </div>
 
-      <div id="q4" aria-expanded="false" aria-hidden="true" style="display: none;">
+      <div id="q4" aria-expanded="false" aria-hidden="true">
         <div class="form-group">
           <label>Reason not shown</label>
           <div>
             <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
           </div>
         </div>
-      <div class="form-group">
-        <label>Was suspect shown CCTV at interview?</label>
+        <div class="form-group">
+          <label>Was suspect shown CCTV at interview?</label>
           <div>
             <label class="radio-inline">
-        <input type="radio" name="q2" value="yes" class="js-Conditional" data-conditional-el="q5" aria-control="q5"> Yes
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="q2" value="no" class="js-Conditional" data-conditional-el="q6" aria-control="q6"> No
-      </label>
+              <input type="radio" name="q2" value="yes" class="js-Conditional" data-conditional-el="q5" aria-control="q5"> Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="q2" value="no" class="js-Conditional" data-conditional-el="q6" aria-control="q6"> No
+            </label>
           </div>
         </div>
       </div>
 
-      <div id="q5" aria-expanded="false" aria-hidden="true" style="display: none;">
+      <div id="q5" aria-expanded="false" aria-hidden="true">
         <div class="form-group">
           <label>Suspect's comments</label>
           <div>
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div id="q6" aria-expanded="true" aria-hidden="false" style="display: block;">
+      <div id="q6" aria-expanded="true" aria-hidden="false">
         <div class="form-group">
           <label>Reason not shown</label>
           <div>
