@@ -11,10 +11,13 @@ angular.module('digitalCasefileApp')
     return {
       templateUrl: 'scripts/directives/cctv.html',
       restrict: 'E',
-      scope: {},
+      scope: {
+        cctv: '=data'
+      },
       replace: true,
-      link: function postLink(scope, element, attrs) {
-        //console.log('cctv', [scope, element, attrs]);
+      link: function postLink() {
+        //console.log('cctv link', [$scope, $element, $attrs]);
+
       }
     };
   });

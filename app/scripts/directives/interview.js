@@ -11,10 +11,13 @@ angular.module('digitalCasefileApp')
     return {
       templateUrl: 'scripts/directives/interview.html',
       restrict: 'E',
-      scope: {},
+      scope: {
+        interview: '=data'
+      },
       replace: true,
-      link: function postLink(scope, element, attrs) {
-        //console.log('interview',[scope,  element, attrs]);
+      link: function postLink() {
+        //console.log('interview link', [$scope, $element, $attrs]);
+
       }
     };
   });
