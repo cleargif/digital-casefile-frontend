@@ -23,28 +23,34 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+        resolve: {
+          app: function ($q, localstore) {
+            var defer = $q.defer();
+            localstore.init(defer);
+            return defer.promise;
+          }
+        }
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/dashboard', {
-        templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl'
-      })
-      .when('/casefile', {
+      .when('/casefile/:urn', {
         templateUrl: 'views/casefile.html',
         controller: 'CasefileCtrl'
       })
-      .when('/contactsheet', {
+      .when('/contactsheet/:urn', {
         templateUrl: 'views/contactsheet.html',
         controller: 'ContactsheetCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  }).config(['localStorageServiceProvider', function (localStorageServiceProvider) {
-    localStorageServiceProvider.setPrefix('ls');
-  }]);
+  }).config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('CPS')
+      .setStorageType('localStorage')
+      .setNotify(true, true);
+  });

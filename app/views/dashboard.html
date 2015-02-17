@@ -1,1 +1,31 @@
-<p>This is the dashboard view.</p>
+<div class="dashboard">
+  <header>
+    <h1>Dashboard</h1>
+  </header>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Case Files</div>
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>URN</th>
+          <th>Type</th>
+          <th>Heading 2</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in data">
+          <th scope="row">{{ row.urn }}</th>
+          <td>{{ row.type }}</td>
+          <td>{{ row.suspect.fullname }}</td>
+          <td><a href="#/casefile/{{ row.urn }}">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

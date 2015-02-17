@@ -8,10 +8,10 @@
  * Controller of the digitalCasefileApp
  */
 angular.module('digitalCasefileApp')
-  .controller('CasefileCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('CasefileCtrl', function ($scope, $routeParams, localstore) {
+    //console.log('CasefileCtrl', [$scope, $routeParams.urn, localstore.ref]);
+
+    $scope.casefile = localstore.ref.get($routeParams.urn);
+
+
   });
