@@ -1,41 +1,39 @@
-<div class="suspect">
-  <form role="form">
-    <div class="form-group">
-      <label for="suspect.fullname">Suspect</label>
-      <input type="text" class="form-control" id="suspect.fullname" placeholder="Full name" ng-model="suspect.fullname">
-    </div>
+<div id="suspect" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Suspect Details</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form">
+      <div class="form-group">
+        <label for="suspect.fullname">Suspect</label>
+        <input type="text" class="form-control" id="suspect.fullname" placeholder="Full name" ng-model="suspect.fullname">
+      </div>
 
-    <div class="form-group">
-      <label for="name">Date of Birth</label>
+      <div class="form-group">
+        <label for="name">Date of Birth</label>
+        <br />
+          <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Day" ng-model="suspect.dobd" />
+          <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Month" ng-model="suspect.dobm" />
+          <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Year" ng-model="suspect.doby" />
+      </div>
+
       <br />
-        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Day" ng-model="suspect.dobd" />
-        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Month" ng-model="suspect.dobm" />
-        <input style="min-width:1em; width:15%; display:inline-block" type="text" class="form-control" placeholder="Year" ng-model="suspect.doby" />
-    </div>
 
-    <br />
+      <div class="form-group">
+        <label for="name">Anticipated Plea</label>
+        <select class="form-control">
+          <option>Select</option>
+          <option>Non-guilty</option>
+          <option>Guilty</option>
+          <option>Restorative justice</option>
+          <option>Fine</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="name">Anticipated Plea</label>
-      <select class="form-control">
-        <option>Select</option>
-        <option>Non-guilty</option>
-        <option>Guilty</option>
-        <option>Restorative justice</option>
-        <option>Fine</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="name">URN</label>
-      <input type="text" class="form-control" id="name" placeholder="Example: 05E24592812" ng-model="suspect.urn">
-    </div>
-  </form>
-  <!--
-
-  expect which elements
-  expect to see data on isolate scope
-
-
-   -->
+      <div class="form-group">
+        <label for="name">URN</label>
+        <input type="text" class="form-control" id="name" placeholder="Example: 05E24592812" ng-model="suspect.urn">
+      </div>
+    </form>
+  </div>
 </div>

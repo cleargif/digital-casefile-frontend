@@ -41,7 +41,7 @@ angular
         templateUrl: 'views/casefile.html',
         controller: 'CasefileCtrl'
       })
-      .when('/contactsheet/:urn', {
+      .when('/contactsheet/', {
         templateUrl: 'views/contactsheet.html',
         controller: 'ContactsheetCtrl'
       })

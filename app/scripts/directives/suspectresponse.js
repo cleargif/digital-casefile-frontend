@@ -11,10 +11,13 @@ angular.module('digitalCasefileApp')
     return {
       templateUrl: 'scripts/directives/suspectresponse.html',
       restrict: 'E',
-      scope: {},
+      scope: {
+        suspectresponse: '=data'
+      },
       replace: true,
-      link: function postLink(scope, element, attrs) {
-        //console.log('suspectresponse', [scope, element, attrs]);
+      link: function postLink() {
+        //console.log('suspectresponse link', [$scope, $element, $attrs]);
+
       }
     };
   });

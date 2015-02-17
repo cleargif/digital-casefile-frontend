@@ -11,10 +11,13 @@ angular.module('digitalCasefileApp')
     return {
       templateUrl: 'scripts/directives/propertystolen.html',
       restrict: 'E',
-      scope: {},
+      scope: {
+        propertystolen: '=data'
+      },
       replace: true,
-      link: function postLink(scope, element, attrs) {
-        //console.log('propertystolen', [scope, element, attrs]);
+      link: function postLink() {
+        //console.log('propertystolen link', [$scope, $element, $attrs]);
+
       }
     };
   });
