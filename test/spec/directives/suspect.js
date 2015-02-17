@@ -13,9 +13,11 @@ describe('Directive: suspect', function () {
     var parentScope = $rootScope.$new();
     var childScope = parentScope.$new();
 
-    parentScope.data = {name:'david'};
+    parentScope.data = {
+      name: 'david'
+    };
 
-    var template = '<suspect suspect="data"></suspect>';
+    var template = '<suspect data="data"></suspect>';
     element = $compile(template)(childScope);
 
     parentScope.$digest();
@@ -26,6 +28,10 @@ describe('Directive: suspect', function () {
     //expect(element.hasClass('suspect')).toBe(true);
     expect(element.find('form').length).toBe(1);
   }));
+
+
+
+
 
   // it('should have isolated scope', inject(function(){
   //   expect(element.hasClass('ng-isolate-scope')).toBe(true);
