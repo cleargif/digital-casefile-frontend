@@ -55,3 +55,12 @@ body.small-footer #footer {
   background-color: gray;
   color: white;
 }
+
+
+.casefile .panel-body{
+  display:none;
+}
+
+.casefile .panel-title:hover{
+  cursor: pointer;
+}
