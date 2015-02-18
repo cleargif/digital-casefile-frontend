@@ -12,9 +12,7 @@ angular.module('digitalCasefileApp')
 
     $scope.data = localstore.data;
 
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.reloadData = function () {
+      localstore.reload();
+    };
   });

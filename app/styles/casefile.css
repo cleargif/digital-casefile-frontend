@@ -64,3 +64,9 @@ body.small-footer #footer {
 .casefile .panel-title:hover{
   cursor: pointer;
 }
+
+#suspect .dob input{
+  min-width:1em;
+  width:15%;
+  display:inline-block
+}

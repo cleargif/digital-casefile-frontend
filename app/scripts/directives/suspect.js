@@ -12,11 +12,27 @@ angular.module('digitalCasefileApp')
       templateUrl: 'scripts/directives/suspect.html',
       restrict: 'E',
       scope: {
-        suspect: '=data'
+        suspect: '=data',
+        store: '&'
       },
       replace: true,
-      link: function postLink() {
+      link: function postLink(scope) {
         //console.log('suspect link', [$scope, $element, $attrs]);
+
+        scope.pleaOptions = [{
+          name: 'Non-guilty',
+          value: 'nonGuilty'
+        }, {
+          name: 'Guilty',
+          value: 'guilty'
+        }, {
+          name: 'Restorative justice',
+          value: 'restorativeJustice'
+        }, {
+          name: 'Fine',
+          value: 'fine'
+        }];
+
 
       }
     };

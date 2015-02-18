@@ -12,7 +12,8 @@ angular.module('digitalCasefileApp')
       templateUrl: 'scripts/directives/cctv.html',
       restrict: 'E',
       scope: {
-        cctv: '=data'
+        cctv: '=data',
+        store: '&'
       },
       replace: true,
       link: function postLink() {

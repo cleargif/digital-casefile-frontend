@@ -26,7 +26,7 @@ angular
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl',
         resolve: {
-          app: function ($q, localstore) {
+          dataLoad: function ($q, localstore) {
             var defer = $q.defer();
             localstore.init(defer);
             return defer.promise;

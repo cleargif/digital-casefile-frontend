@@ -16,32 +16,32 @@ angular.module('digitalCasefileApp')
       'type': 'Theft',
       'suspect': {
         'fullname': 'Billy the Kid',
-        'dobd': '25',
-        'dobm': '12',
-        'doby': '1990',
-        'plea':'Guilty',
-        'urn': '1234567890'
+        'dobDay': '25',
+        'dobMonth': '12',
+        'dobYear': '1990',
+        'plea': 'restorativeJustice',
+        'URN': '1234567890'
       },
       'dateofoffence': {
-        'offenceday':'26',
+        'offenceday': '26',
         'offencemonth': '5',
         'offenceyear': '2010',
         'offencetimehour': '15',
         'offencetimeminute': '30'
       }
-    },{
+    }, {
       'urn': '0987654321',
       'type': 'Robbery',
       'suspect': {
         'fullname': 'Solly the Brick',
-        'dobd': '25',
-        'dobm': '12',
-        'doby': '1990',
-        'plea':'Not Guilty',
-        'urn': '0987654321'
+        'dobDay': '25',
+        'dobMonth': '12',
+        'dobYear': '1990',
+        'plea': 'guilty',
+        'URN': '0987654321'
       },
       'dateofoffence': {
-        'offenceday':'26',
+        'offenceday': '26',
         'offencemonth': '5',
         'offenceyear': '2010',
         'offencetimehour': '15',
@@ -50,21 +50,33 @@ angular.module('digitalCasefileApp')
     }];
 
     function init(defer) {
-      if(!_container.length){
-        angular.forEach(sampleData, function(obj){
-          localStorageService.set(obj.urn, JSON.stringify(obj));
-          _container.push(localStorageService.get(obj.urn));
-        });
+      if (!_container.length) {
+        localStorageService.clearAll();
+        loadData();
       }
-
-      console.log(_container);
       return defer.resolve();
+    }
+
+    function loadData() {
+      angular.forEach(sampleData, function (obj) {
+        localStorageService.set(obj.urn, JSON.stringify(obj));
+        _container.push(localStorageService.get(obj.urn));
+      });
+    }
+
+    function reload() {
+      localStorageService.clearAll();
+      _container.length = 0;
+      loadData();
     }
 
     return {
       data: _container,
       ref: localStorageService,
-      init: function(defer){
+      reload: function () {
+        reload();
+      },
+      init: function (defer) {
         return init(defer);
       }
     };
