@@ -16,11 +16,11 @@ angular.module('digitalCasefileApp')
       'type': 'Theft',
       'suspect': {
         'fullname': 'Billy the Kid',
-        'dobd': '25',
-        'dobm': '12',
-        'doby': '1990',
-        'plea':'Guilty',
-        'urn': '1234567890'
+        'dobD': '25',
+        'dobM': '12',
+        'dobY': '1990',
+        'plea':'restorativeJustice',
+        'URN': '1234567890'
       },
       'dateofoffence': {
         'offenceday':'26',
@@ -34,11 +34,11 @@ angular.module('digitalCasefileApp')
       'type': 'Robbery',
       'suspect': {
         'fullname': 'Solly the Brick',
-        'dobd': '25',
-        'dobm': '12',
-        'doby': '1990',
-        'plea':'Not Guilty',
-        'urn': '0987654321'
+        'dobD': '25',
+        'dobM': '12',
+        'dobY': '1990',
+        'plea':'guilty',
+        'URN': '0987654321'
       },
       'dateofoffence': {
         'offenceday':'26',
