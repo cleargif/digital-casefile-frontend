@@ -11,29 +11,37 @@ describe('Directive: cctv', function () {
   var parentScope;
   var scope;
 
-  var template = '<cctv data="data"></cctv>';
+  var template = '<cctv data="casefile.cctv" store="saveCtrl(cctv)"></cctv>';
 
   beforeEach(inject(function($injector) {
     var $rootScope = $injector.get('$rootScope');
     var $compile = $injector.get('$compile');
     var casefile = $injector.get('casefileMock');
 
+    // Parent and Child Scope
     parentScope = $rootScope.$new();
     var childScope = parentScope.$new();
 
+    // Set properties on the parent scope
     parentScope.data = casefile.cctv;
+
 
     var element = $compile(template)(childScope);
 
     parentScope.$digest();
     scope = element.isolateScope();
 
-    widget = element[0];
+    widget = angular.element(element[0]);
   }));
 
   it('should have a form', inject(function () {
-    expect(widget.querySelector('form')).not.toBe(null);
+    expect(widget.find('form')).not.toBe(null);
   }));
+
+  it('should have 5 inputs and 2 textareas', function() {
+    expect(widget.find('input').length).toBe(5);
+    expect(widget.find('textarea').length).toBe(4);
+  });
 
   // it('should show the cctv name in the input field', function() {
   //   var input = widget.querySelector('#cctv\\.fullname');
