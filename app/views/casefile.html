@@ -1,12 +1,31 @@
 <div class="casefile" collapse>
   <header>
     <h1>Casefile</h1>
-    <h4>URN: {{casefile.urn}} ({{ casefile.type }})</h4>
   </header>
 
-  <suspect data="casefile.suspect" store="saveCtrl(suspect)"></suspect>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>URN</th>
+          <th>Date created</th>
+          <th>Last updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>{{ casefile.id }}</th>
+          <td>{{ casefile.urn }}</td>
+          <td>{{ casefile.created_at | date:'medium' }}</td>
+          <td>{{ casefile.updated_at | date:'medium' }}</td>
+        </tr><!-- end ngRepeat: row in data -->
 
-  <cctv data="casefile.cctv" store="saveCtrl(cctv)"></cctv>
+      </tbody>
+    </table>
+
+  <suspect data="casefile.blob.suspect" store="saveCtrl({suspect: suspect})"></suspect>
+
+  <cctv data="casefile.blob.cctv" store="saveCtrl({cctv: cctv})"></cctv>
 
 
 </div>

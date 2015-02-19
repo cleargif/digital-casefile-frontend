@@ -16,7 +16,7 @@ angular.module('digitalCasefileApp')
         store: '&'
       },
       replace: true,
-      link: function postLink(scope) {
+      link: function postLink(scope, element) {
         //console.log('suspect link', [$scope, $element, $attrs]);
 
         scope.pleaOptions = [{
@@ -33,7 +33,17 @@ angular.module('digitalCasefileApp')
           value: 'fine'
         }];
 
+        element.find('input').bind('blur', function () {
+          scope.store({
+            suspect: scope.suspect
+          });
+        });
 
+        element.find('select').bind('change', function () {
+          scope.store({
+            suspect: scope.suspect
+          });
+        });
       }
     };
   });

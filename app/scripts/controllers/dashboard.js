@@ -10,9 +10,18 @@
 angular.module('digitalCasefileApp')
   .controller('DashboardCtrl', function ($scope, localstore) {
 
-    $scope.data = localstore.data;
+    function loadData() {
+      localstore.getAll().then(function () {
+        $scope.data = localstore.ref();
+      });
+    }
+
+
 
     $scope.reloadData = function () {
-      localstore.reload();
+      loadData();
     };
+
+    $scope.reloadData();
+
   });

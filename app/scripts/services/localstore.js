@@ -8,76 +8,67 @@
  * Service in the digitalCasefileApp.
  */
 angular.module('digitalCasefileApp')
-  .service('localstore', ['localStorageService', function (localStorageService) {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .service('localstore', ['localStorageService', '$http', function (localStorageService, $http) {
     var _container = [];
-    var sampleData = [{
-      'urn': '1234567890',
-      'type': 'Theft',
-      'suspect': {
-        'fullname': 'Billy the Kid',
-        'dobDay': '25',
-        'dobMonth': '12',
-        'dobYear': '1990',
-        'plea': 'restorativeJustice',
-        'URN': '1234567890'
-      },
-      'dateofoffence': {
-        'offenceday': '26',
-        'offencemonth': '5',
-        'offenceyear': '2010',
-        'offencetimehour': '15',
-        'offencetimeminute': '30'
-      }
-    }, {
-      'urn': '0987654321',
-      'type': 'Robbery',
-      'suspect': {
-        'fullname': 'Solly the Brick',
-        'dobDay': '25',
-        'dobMonth': '12',
-        'dobYear': '1990',
-        'plea': 'guilty',
-        'URN': '0987654321'
-      },
-      'dateofoffence': {
-        'offenceday': '26',
-        'offencemonth': '5',
-        'offenceyear': '2010',
-        'offencetimehour': '15',
-        'offencetimeminute': '30'
-      }
-    }];
+    var baseURL = 'https://dcf-backend.herokuapp.com/case_files/';
 
-    function init(defer) {
-      if (!_container.length) {
-        localStorageService.clearAll();
-        loadData();
-      }
-      return defer.resolve();
+    function getAll() {
+      return $http.get(baseURL, {
+        //cache: true
+      }).
+      success(function (data) {
+        _container = data;
+      }).
+      error(function () {});
     }
 
-    function loadData() {
-      angular.forEach(sampleData, function (obj) {
-        localStorageService.set(obj.urn, JSON.stringify(obj));
-        _container.push(localStorageService.get(obj.urn));
-      });
+    function getCaseById(id) {
+      return $http.get(baseURL + id, {
+        //cache: true
+      }).
+      success(function () {
+
+      }).
+      error(function () {});
     }
 
-    function reload() {
-      localStorageService.clearAll();
-      _container.length = 0;
-      loadData();
+    function storeData(data, id) {
+      console.log('put',data);
+      return $http({
+        method: 'PUT',
+        url: baseURL + id,
+        data: 'case_file=' + JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        },
+      }).success(function () {
+      }).
+      error(function () {});
     }
+
+
 
     return {
-      data: _container,
-      ref: localStorageService,
-      reload: function () {
-        reload();
+      ref: function () {
+        return _container;
       },
-      init: function (defer) {
-        return init(defer);
+      getAll: function () {
+        return getAll();
+      },
+      getCaseById: function (id) {
+        return getCaseById(id);
+      },
+      storeData: function (data, id) {
+        return storeData(data, id);
       }
     };
   }]);
+
+
+/*
+
+  -
+
+
+
+ */

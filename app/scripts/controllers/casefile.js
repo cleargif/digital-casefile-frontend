@@ -11,9 +11,14 @@ angular.module('digitalCasefileApp')
   .controller('CasefileCtrl', function ($scope, $routeParams, localstore) {
     console.log('CasefileCtrl');
 
-    $scope.casefile = localstore.ref.get($routeParams.urn);
+    localstore.getCaseById(parseInt($routeParams.urn,10)).then(function(response){
+      $scope.casefile = response.data;
+    });
+
 
     $scope.saveCtrl = function(data){
-      console.log('saveSection', data);
+      localstore.storeData(data, $scope.casefile.id).then(function(response){
+        $scope.casefile = response.data;
+      });
     };
   });

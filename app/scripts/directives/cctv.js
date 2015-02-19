@@ -7,7 +7,7 @@
  * # cctv
  */
 angular.module('digitalCasefileApp')
-  .directive('cctv', function () {
+  .directive('cctv', function ($timeout) {
     return {
       templateUrl: 'scripts/directives/cctv.html',
       restrict: 'E',
@@ -17,8 +17,12 @@ angular.module('digitalCasefileApp')
       },
       replace: true,
       link: function postLink() {
-        //console.log('cctv link', [$scope, $element, $attrs]);
-        angular.element.jqReveal();
+        //console.log('cctv link ' , [$scope, $element, $attrs]);
+
+        $timeout(function () {
+          angular.element.jqReveal();
+        }, 1000);
+
       }
     };
   });

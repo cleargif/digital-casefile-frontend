@@ -10,18 +10,24 @@
     <table class="table">
       <thead>
         <tr>
+          <th>ID</th>
           <th>URN</th>
-          <th>Type</th>
-          <th>Heading 2</th>
-          <th>Actions</th>
+          <th>Last update</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="row in data">
-          <th scope="row">{{ row.urn }}</th>
+        <!-- <tr ng-repeat="row in data">
+          <th scope="row">{{ row.URN }}</th>
           <td>{{ row.type }}</td>
           <td>{{ row.suspect.fullname }}</td>
-          <td><a href="#/casefile/{{ row.urn }}">Edit</a></td>
+          <td><a href="#/casefile/{{ row.URN }}">Edit</a></td>
+        </tr> -->
+        <tr ng-repeat="row in data">
+          <th scope="row">{{ row.id }}</th>
+          <td>{{ row.urn }}</td>
+          <td>{{ row.updated_at | date:'medium' }}</td>
+          <td><a href="#/casefile/{{ row.id }}">Edit</a></td>
         </tr>
       </tbody>
     </table>
