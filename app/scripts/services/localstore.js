@@ -33,7 +33,6 @@ angular.module('digitalCasefileApp')
     }
 
     function storeData(data, id) {
-      console.log('put',data);
       return $http({
         method: 'PUT',
         url: baseURL + id,
