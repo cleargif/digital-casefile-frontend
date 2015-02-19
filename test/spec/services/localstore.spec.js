@@ -17,18 +17,8 @@ describe('Service: localstore', function () {
     expect(!!localstore.ref).toBe(true);
   });
 
-  it('should be supported', function () {
-    expect(localstore.ref.isSupported).toBe(true);
+  it('should behave a save method', function() {
+    expect(localstore.save).toBeDefined();
   });
-
-  it('should be of localStorage type', function () {
-    expect(localstore.ref.getStorageType()).toBe('localStorage');
-  });
-
-  it('should write to local storate', function () {
-    localstore.ref.set('some', 'thing');
-    expect(localstore.ref.get('some')).toBe('thing');
-  });
-
 
 });
