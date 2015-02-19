@@ -24,14 +24,7 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl',
-        resolve: {
-          dataLoad: function ($q, localstore) {
-            var defer = $q.defer();
-            localstore.init(defer);
-            return defer.promise;
-          }
-        }
+        controller: 'DashboardCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
