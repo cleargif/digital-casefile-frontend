@@ -18,8 +18,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'LocalStorageModule'
+    'pascalprecht.translate'
   ])
+
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -41,9 +42,11 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).config(function (localStorageServiceProvider) {
-    localStorageServiceProvider
-      .setPrefix('CPS')
-      .setStorageType('localStorage')
-      .setNotify(true, true);
+  })
+
+  .config(function ($translateProvider) {
+    $translateProvider.translations('en', {
+      HEADLINE: 'Hello there, This is my awesome app!',
+      INTRO_TEXT: 'And it has i18n support!'
+    });
   });

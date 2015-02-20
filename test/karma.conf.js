@@ -33,6 +33,8 @@ module.exports = function(config) {
       'bower_components/angular-local-storage/dist/angular-local-storage.js',
       'bower_components/jq-element-revealer/dist/jquery.jq-element-revealer.js',
       'bower_components/underscore/underscore.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       // templates

@@ -8,7 +8,7 @@
  * Service in the digitalCasefileApp.
  */
 angular.module('digitalCasefileApp')
-  .service('localstore', ['localStorageService', '$http', function (localStorageService, $http) {
+  .service('localstore', ['$http', function ($http) {
     var _container = [];
     var baseURL = 'https://dcf-backend.herokuapp.com/case_files/';
 
