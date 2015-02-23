@@ -1,0 +1,158 @@
+<div id="defendant" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Defendant Details</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({defendant:defendant})" name="defendantSection">
+
+      <div class="form-group">
+        <label for="defendant.name">Defendant Fullname</label>
+        <input type="text" class="form-control" id="defendant.name" placeholder="Full name" ng-model="defendant.name">
+      </div>
+
+      <div class="form-group dob">
+        <label for="name">Date of Birth</label>
+        <br />
+          <input type="text" class="form-control" placeholder="Day" ng-model="defendant.date_of_birthDay" />
+          <input type="text" class="form-control" placeholder="Month" ng-model="defendant.date_of_birthMonth" />
+          <input type="text" class="form-control" placeholder="Year" ng-model="defendant.date_of_birthYear" />
+      </div>
+
+      <div class="form-group">
+        <label for="defendant.occupation">Occupation</label>
+        <input type="text" class="form-control" id="defendant.occupation" placeholder="Full occupation" ng-model="defendant.occupation">
+      </div>
+
+      <div class="form-group">
+        <label for="defendant.class_a_drug_test_provided">Has a positive class A drug test been provided?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="q1" class="jqr-publisher" value="yes"
+              ng-model="defendant.class_a_drug_test_provided"
+              data-jqr-publish-events="class_a_drug_test_provided"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="q1" class="jqr-publisher" value="no"
+              ng-model="defendant.class_a_drug_test_provided"
+              data-jqr-publish-events="class_a_drug_test_provided"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="class_a_drug_test_provided" data-jqr-subscribe-values="yes">
+        <label for="defendant.class_a_drug_test_details">Please provide the details of the substances tested positive for.</label>
+        <div>
+          <textarea ng-model="defendant.class_a_drug_test_details" class="form-control" placeholder="Add details here" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="defendant.committed_on_bail">Have the offences been committed on Bail?</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="defendant.committed_on_bail" value="yes"
+              ng-model="defendant.committed_on_bail"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="defendant.committed_on_bail" value="no"
+              ng-model="defendant.committed_on_bail"> No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="defendant.breach_of_order">Have the offences been committed in breach of a current court order?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="defendant.breach_of_order" class="jqr-publisher" value="yes"
+              ng-model="defendant.breach_of_order"
+              data-jqr-publish-events="breach_of_order"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="defendant.breach_of_order" class="jqr-publisher" value="no"
+              ng-model="defendant.breach_of_order"
+              data-jqr-publish-events="breach_of_order"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="breach_of_order" data-jqr-subscribe-values="yes">
+        <label for="defendant.breach_order_details">Specify details of the court order in breach. (Will be found in PNC record).</label>
+        <div>
+          <textarea ng-model="defendant.breach_order_details" class="form-control" placeholder="Add details here" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="defendant.pnc_record">Has a PNC check been performed?</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="q2" class="jqr-publisher" value="yes"
+              ng-model="defendant.pnc_record"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="q2" class="jqr-publisher" value="no"
+              ng-model="defendant.pnc_record"> No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="defendant.interpretor_required">Is an interpreter required?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="defendant.interpretor_required" class="jqr-publisher" value="yes"
+              ng-model="defendant.interpretor_required"
+              data-jqr-publish-events="interpretor_required"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="defendant.interpretor_required" class="jqr-publisher" value="no"
+              ng-model="defendant.interpretor_required"
+              data-jqr-publish-events="interpretor_required"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="interpretor_required" data-jqr-subscribe-values="yes">
+        <label for="defendant.interpretor_language_or_dialect">Please provide language and/or dialect.</label>
+        <div>
+          <textarea ng-model="defendant.interpretor_language_or_dialect" class="form-control" placeholder="Add details here" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="defendant.dealt_with_in_welsh">Does the Defendant wish to be dealt with in Welsh?</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="defendant.dealt_with_in_welsh" value="yes"
+              ng-model="defendant.dealt_with_in_welsh"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="defendant.dealt_with_in_welsh" value="no"
+              ng-model="defendant.dealt_with_in_welsh"> No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">What is the Remand status of the Defendant?</label>
+        <select class="form-control" ng-model="defendant.plea">
+          <option ng-selected="{{plea.value == defendant.plea}}" ng-repeat="plea in pleaOptions" value="{{plea.value}}">
+              {{plea.name}}
+            </option>
+        </select>
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>

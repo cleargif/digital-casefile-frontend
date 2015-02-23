@@ -3,7 +3,7 @@
 // Generated on 2015-02-13 using
 // generator-karma 0.9.0
 
-module.exports = function(config) {
+module.exports = function (config) {
   'use strict';
 
   config.set({
@@ -33,9 +33,8 @@ module.exports = function(config) {
       'bower_components/angular-local-storage/dist/angular-local-storage.js',
       'bower_components/jq-element-revealer/dist/jquery.jq-element-revealer.js',
       'bower_components/underscore/underscore.js',
-      'bower_components/angular-translate/angular-translate.js',
-      'bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       // endbower
       // templates
       'app/scripts/directives/*.html',
@@ -45,8 +44,7 @@ module.exports = function(config) {
     ],
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
+    exclude: [],
 
     // web server port
     port: 9876,
@@ -64,7 +62,7 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      'app/scripts/directives/*.html' : ['ng-html2js']
+      'app/scripts/directives/*.html': ['ng-html2js']
     },
     ngHtml2JsPreprocessor: {
       stripPrefix: 'app/',
