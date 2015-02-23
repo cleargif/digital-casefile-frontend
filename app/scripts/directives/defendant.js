@@ -16,11 +16,8 @@ angular.module('digitalCasefileApp')
         store: '&'
       },
       replace: true,
-      link: function postLink(scope, element) {
+      link: function postLink(scope) {
         //console.log('defendant link', [$scope, $element, $attrs]);
-
-
-
         scope.pleaOptions = [
           {
             value: 'CB',
@@ -49,17 +46,19 @@ angular.module('digitalCasefileApp')
           }
         ];
 
-        element.find('input').bind('blur', function () {
-          scope.store({
-            defendant: scope.defendant
-          });
-        });
 
-        element.find('select').bind('change', function () {
-          scope.store({
-            defendant: scope.defendant
-          });
-        });
+
+        // element.find('input').bind('blur', function () {
+        //   scope.store({
+        //     defendant: scope.defendant
+        //   });
+        // });
+
+        // element.find('select').bind('change', function () {
+        //   scope.store({
+        //     defendant: scope.defendant
+        //   });
+        // });
       }
     };
   });
