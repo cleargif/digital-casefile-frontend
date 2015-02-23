@@ -3,9 +3,13 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
 
-## Build & development
+## Development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt serve` & `grunt karma:start` in two terminals for preview.
+
+## Build
+
+Run `grunt` for building
 
 ## Testing
 
