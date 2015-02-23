@@ -14,14 +14,20 @@ angular.module('mocks', [])
     'interpretor_required': 'yes',
     'dealt_with_in_welsh': 'yes',
     'plea': 'LA'
+  }).value('interviewDataMock', {
+    'admissions_made': 'Summarise briefly the admissions made, defences raised, and any explanation given in interview.',
+    'admit_being_dishonest': 'no',
+    'admit_taking_property': 'no',
+    'aggravating_features': 'Are there any aggravating features in the case?',
+    'defendant_legally_represented': 'yes',
+    'explanations_made': 'Are there any explanations made?',
+    'mitigating_circumstances': 'Summarise briefly any mitigating circumstances including any remorse shown.',
+    'reason': 'If not interviewed, please provide a reason why:',
+    'was_defendant_interviewed': 'no'
   })
-  .value('anotherSomethingMock', {
-    propOne: 'value 1',
-    propTwo: 'value 2'
-  })
-  .factory('casefileMock', function casefileMockFactory(defendantDataMock, anotherSomethingMock) {
+  .factory('casefileMock', function casefileMockFactory(defendantDataMock, interviewDataMock) {
     return {
       defendant: defendantDataMock,
-      anotherSomething: anotherSomethingMock
+      interview: interviewDataMock
     };
   });
