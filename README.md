@@ -5,7 +5,7 @@ version 0.11.1.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt` for building and `grunt serve` & `grunt karma:start` in two terminals for preview.
 
 ## Testing
 
