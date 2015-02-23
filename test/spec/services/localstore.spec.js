@@ -1,6 +1,6 @@
 'use strict';
 
-fdescribe('Service: localstore', function () {
+describe('Service: localstore', function () {
 
   // load the service's module
   beforeEach(module('digitalCasefileApp'));

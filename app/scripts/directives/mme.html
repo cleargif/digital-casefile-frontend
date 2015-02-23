@@ -1,0 +1,185 @@
+<div id="mme" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Multi Media Evidance</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({mme:mme})" name="mmeSection">
+
+      <div class="form-group">
+        <label for="mme.was_mme_recorded">Was Multimedia Evidence Recorded</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="mme.was_mme_recorded" class="jqr-publisher" value="yes"
+              ng-model="mme.was_mme_recorded"
+              data-jqr-publish-events="mme.was_mme_recorded"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="mme.was_mme_recorded" class="jqr-publisher" value="no"
+              ng-model="mme.was_mme_recorded"
+              data-jqr-publish-events="mme.was_mme_recorded"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="mme.was_mme_recorded" data-jqr-subscribe-values="yes">
+
+          <div class="form-group">
+            <label for="name">What type of MME?</label>
+            <select class="form-control" ng-model="mme.mmetype">
+              <option ng-selected="{{type.value == mme.mmetype}}" ng-repeat="type in mmeTypes" value="{{type.value}}">
+                  {{type.name}}
+                </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mme.description_of_what_is_seen_in_multimedia_evidence">Describe in detail with reference to start/finish counter reference times what is shown in the multi-media evidence. Counter reference times may be digitally/manually recorded depending in the format of the media.</label>
+            <div>
+              <textarea ng-model="mme.description_of_what_is_seen_in_multimedia_evidence" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mme.total_duration">Total Duration:</label>
+            <div>
+              <textarea ng-model="mme.total_duration" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="mme.relied_upon">Is this Multi-media evidence to be relied upon?</label>
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="mme.relied_upon" value="yes"
+                  ng-model="mme.relied_upon"
+                  > Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="mme.relied_upon" value="no"
+                  ng-model="mme.relied_upon"
+                  > No
+              </label>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="mme.url">URL to evidence:</label>
+            <div>
+              <textarea ng-model="mme.url" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mme.defendant_shown">Was any relevant multi-media evidence, shown to the Defendant during interview?</label>
+            <div class="jqr-delegate-hook">
+              <label class="radio-inline">
+                <input type="radio" name="mme.defendant_shown" class="jqr-publisher" value="yes"
+                  ng-model="mme.defendant_shown"
+                  data-jqr-publish-events="mme.defendant_shown"
+                  > Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="mme.defendant_shown" class="jqr-publisher" value="no"
+                  ng-model="mme.defendant_shown"
+                  data-jqr-publish-events="mme.defendant_shown"
+                  > No
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="mme.defendant_shown" data-jqr-subscribe-values="yes">
+            <label for="mme.defendant_comments_if_shown">Specify the defendant’s comments when the multi-media evidence was played:</label>
+            <div>
+              <textarea ng-model="mme.defendant_comments_if_shown" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="mme.defendant_shown" data-jqr-subscribe-values="no">
+
+
+            <label for="mme.reasons_if_not_shown">If the defendant was not shown the multi-media evidence, specify the reasons:</label>
+            <div>
+              <textarea ng-model="mme.reasons_if_not_shown" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="mme.defendant_arrested_following_mme">Was the defendant arrested as a result of the multi-media evidence?</label>
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="mme.defendant_arrested_following_mme" value="yes"
+                  ng-model="mme.defendant_arrested_following_mme"
+                  > Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="mme.defendant_arrested_following_mme" value="no"
+                  ng-model="mme.defendant_arrested_following_mme"
+                  > No
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mme.defendant_admits_being_in_mme">Does the defendant admit to being in the multi-media evidence?</label>
+            <div class="jqr-delegate-hook">
+              <label class="radio-inline">
+                <input type="radio" name="mme.defendant_admits_being_in_mme" class="jqr-publisher" value="yes"
+                  ng-model="mme.defendant_admits_being_in_mme"
+                  data-jqr-publish-events="mme.defendant_admits_being_in_mme"
+                  > Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="mme.defendant_admits_being_in_mme" class="jqr-publisher" value="no"
+                  ng-model="mme.defendant_admits_being_in_mme"
+                  data-jqr-publish-events="mme.defendant_admits_being_in_mme"
+                  > No
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="mme.defendant_admits_being_in_mme" data-jqr-subscribe-values="no">
+            <label for="mme.how_is_identification_established">If Defendant does not admit to being in the multi-media evidence, and multi-media evidence was not shown. Provide details how is the identification of the defendant established</label>
+            <div>
+              <textarea ng-model="mme.how_is_identification_established" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+      </div>
+
+      <!-- NO -->
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="mme.was_mme_recorded" data-jqr-subscribe-values="no">
+        <div class="form-group">
+          <label for="mme.defendant_admitted_to_location">Did the defendant admit being at the location at the time of the offence?</label>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="mme.defendant_admitted_to_location" value="yes"
+                ng-model="mme.defendant_admitted_to_location"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="mme.defendant_admitted_to_location" value="no"
+                ng-model="mme.defendant_admitted_to_location"
+                > No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mme.how_is_identification_established">Provide details of how the identification of the defendant is established?</label>
+          <div>
+            <textarea ng-model="mme.how_is_identification_established" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>
