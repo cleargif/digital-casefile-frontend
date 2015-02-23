@@ -22,6 +22,16 @@ angular.module('digitalCasefileApp')
       error(function () {});
     }
 
+    function newCasefile() {
+      return $http.get(baseURL + 'new', {
+        //cache: true
+      }).
+      success(function () {
+
+      }).
+      error(function () {});
+    }
+
     function getCaseById(id) {
       return $http.get(baseURL + id, {
         //cache: true
@@ -59,6 +69,9 @@ angular.module('digitalCasefileApp')
       },
       storeData: function (data, id) {
         return storeData(data, id);
+      },
+      newCasefile: function(){
+        return newCasefile();
       }
     };
   }]);
