@@ -16,10 +16,14 @@ angular.module('digitalCasefileApp')
       });
     }
 
-
-
     $scope.reloadData = function () {
       loadData();
+    };
+
+    $scope.newCasefile = function(){
+      localstore.newCasefile().then(function(){
+        $scope.reloadData();
+      });
     };
 
     $scope.reloadData();

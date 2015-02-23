@@ -16,5 +16,9 @@ describe('Controller: DashboardCtrl', function () {
     });
   }));
 
+  it('should have a newCasefile method', function() {
+    expect(scope.newCasefile).toBeDefined();
+  });
+
 
 });
