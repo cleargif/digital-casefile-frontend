@@ -12,7 +12,8 @@ angular.module('digitalCasefileApp')
       templateUrl: 'scripts/directives/interview.html',
       restrict: 'E',
       scope: {
-        interview: '=data'
+        interview: '=data',
+        store: '&'
       },
       replace: true,
       link: function postLink() {

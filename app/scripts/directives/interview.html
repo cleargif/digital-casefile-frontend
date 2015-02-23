@@ -3,82 +3,145 @@
     <h3 class="panel-title">Interview</h3>
   </div>
   <div class="panel-body">
-    <form role="form">
+    <form role="form" ng-submit="store({interview:interview})" name="interviewSection">
+
       <div class="form-group">
-        <label>Was a legal representative present in the interview?</label>
-        <div>
+        <label for="interview.was_defendant_interviewed">Was the Defendant Interviewed?</label>
+        <div class="jqr-delegate-hook">
           <label class="radio-inline">
-            <input type="radio" name="q1" value="yes" class="js-Conditional" data-conditional-el="q2" aria-control="q2"> Yes
+            <input type="radio" name="interview.was_defendant_interviewed" class="jqr-publisher" value="yes"
+              ng-model="interview.was_defendant_interviewed"
+              data-jqr-publish-events="was_defendant_interviewed"
+              > Yes
           </label>
           <label class="radio-inline">
-            <input type="radio" name="q1" value="no" class="js-Conditional"> No
+            <input type="radio" name="interview.was_defendant_interviewed" class="jqr-publisher" value="no"
+              ng-model="interview.was_defendant_interviewed"
+              data-jqr-publish-events="was_defendant_interviewed"
+              > No
           </label>
         </div>
       </div>
 
-      <div id="q2" aria-expanded="true" aria-hidden="false" style="display: block;">
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="was_defendant_interviewed" data-jqr-subscribe-values="yes">
+
         <div class="form-group">
-          <label>Name</label>
+          <label for="interview.admissions_made">Summarise briefly the admissions made, defences raised, and any explanation given in interview.</label>
           <div>
-            <input type="text" class="form-control" placeholder="Full name">
+            <textarea ng-model="interview.admissions_made" class="form-control" placeholder="Add details here" rows="5"></textarea>
           </div>
         </div>
+
         <div class="form-group">
-          <label>Firm of solicitors</label>
+          <label for="interview.mitigating_circumstances">Summarise briefly any mitigating circumstances including any remorse shown.</label>
           <div>
-            <input type="text" class="form-control" placeholder="Full name">
+            <textarea ng-model="interview.mitigating_circumstances" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interview.aggravating_features">Are there any aggravating features in the case?</label>
+          <div>
+            <textarea ng-model="interview.aggravating_features" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interview.explanations_made">Are there any explanations made?</label>
+          <div>
+            <textarea ng-model="interview.explanations_made" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interview.admit_taking_property">Does the Defendant admit taking the property?</label>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="interview.admit_taking_property" value="yes"
+                ng-model="interview.admit_taking_property"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="interview.admit_taking_property" value="no"
+                ng-model="interview.admit_taking_property"
+                > No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interview.admit_being_dishonest">Does the Defendant admit being dishonest?</label>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="interview.admit_being_dishonest" value="yes"
+                ng-model="interview.admit_being_dishonest"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="interview.admit_being_dishonest" value="no"
+                ng-model="interview.admit_being_dishonest"
+                > No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interview.defendant_legally_represented">Does the Defendant have legal representation?</label>
+          <div class="jqr-delegate-hook">
+            <label class="radio-inline">
+              <input type="radio" name="interview.defendant_legally_represented" class="jqr-publisher" value="yes"
+                ng-model="interview.defendant_legally_represented"
+                data-jqr-publish-events="defendant_legally_represented"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="interview.defendant_legally_represented" class="jqr-publisher" value="no"
+                ng-model="interview.defendant_legally_represented"
+                data-jqr-publish-events="defendant_legally_represented"
+                > No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="defendant_legally_represented" data-jqr-subscribe-values="yes">
+
+          <div class="form-group">
+            <label for="interview.legally_represented_by">Legal representative name</label>
+            <div>
+              <textarea ng-model="interview.legally_represented_by" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="interview.legal_representative_firm">Legal representative firm</label>
+            <div>
+              <textarea ng-model="interview.legal_representative_firm" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="interview.interpreters">Interpreters</label>
+            <div>
+              <textarea ng-model="interview.interpreters" class="form-control" placeholder="Add details here" rows="5"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="was_defendant_interviewed" data-jqr-subscribe-values="no">
+        <div class="form-group">
+          <label for="interview.reason">If not interviewed, please provide a reason why:</label>
+          <div>
+            <textarea ng-model="interview.reason" class="form-control" placeholder="Add details here" rows="5"></textarea>
           </div>
         </div>
       </div>
+
+
+      <input type="submit" value="Save" />
     </form>
-
-    <form role="form">
-      <div class="form-group">
-        <label>Did suspect require an interpreter?</label>
-        <div>
-          <label class="radio-inline">
-            <input type="radio" name="q3" value="yes" class="js-Conditional" data-conditional-el="q4" aria-control="q4"> Yes
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="q3" value="no" class="js-Conditional"> No
-          </label>
-        </div>
-      </div>
-
-      <div id="q4" aria-expanded="true" aria-hidden="false" style="display: block;">
-        <div class="form-group">
-          <label>Language</label>
-          <div>
-            <select class="form-control">
-              <option>Select</option>
-              <option>Albanian</option>
-              <option>Amharic</option>
-              <option>Armenian</option>
-              <option>Arabic</option>
-              <option>Azeri</option>
-              <option>Bengali</option>
-              <option>Bosnian</option>
-              <option>British Sign Language</option>
-              <option>Bulgarian</option>
-              <option>Burmese</option>
-              <option>Catalan</option>
-              <option>Chinese (Cantonese)</option>
-              <option>Chinese (Hakka)</option>
-              <option>Chinese (Mandarin)</option>
-              <option>Croatian</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <label>Admissions in interview</label>
-        <div>
-          <textarea class="form-control" placeholder="Add details here" rows="5"></textarea>
-        </div>
-      </div>
-    </form>
-
   </div>
 </div>
