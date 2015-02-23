@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: localstore', function () {
+fdescribe('Service: localstore', function () {
 
   // load the service's module
   beforeEach(module('digitalCasefileApp'));
@@ -17,8 +17,20 @@ describe('Service: localstore', function () {
     expect(!!localstore.ref).toBe(true);
   });
 
-  it('should behave a save method', function() {
-    expect(localstore.save).toBeDefined();
+  it('should behave a ref method', function() {
+    expect(localstore.ref).toBeDefined();
+  });
+
+  it('should behave a getAll method', function() {
+    expect(localstore.getAll).toBeDefined();
+  });
+
+  it('should behave a getCaseById method', function() {
+    expect(localstore.getCaseById).toBeDefined();
+  });
+
+  it('should behave a storeData method', function() {
+    expect(localstore.storeData).toBeDefined();
   });
 
 });
