@@ -1,0 +1,54 @@
+<div id="compensation" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Victim Compensation</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({compensation:compensation})" name="compensationSection">
+
+
+
+      <div class="form-group">
+        <label for="compensation.make_a_compensation">Does the Victim wish to make an application for Compensation?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="compensation.make_a_compensation" class="jqr-publisher" value="yes"
+              ng-model="compensation.make_a_compensation"
+              data-jqr-publish-events="compensation.make_a_compensation"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="compensation.make_a_compensation" class="jqr-publisher" value="no"
+              ng-model="compensation.make_a_compensation"
+              data-jqr-publish-events="compensation.make_a_compensation"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="compensation.make_a_compensation" data-jqr-subscribe-values="yes">
+
+        <div class="form-group">
+          <label for="compensation.defendant_name">Defendant Name</label>
+          <div>
+            <input type="text" ng-model="compensation.defendant_name" class="form-control" placeholder="Add details here" rows="5"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="compensation.reason_for_application">Reason for Application</label>
+          <div>
+            <textarea ng-model="compensation.reason_for_application" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="compensation.amount_compensation_applied_for">Amount compensation applied for</label>
+          <div>
+            <input type="text" ng-model="compensation.amount_compensation_applied_for" class="form-control" placeholder="Add details here" rows="5"/>
+          </div>
+        </div>
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>
