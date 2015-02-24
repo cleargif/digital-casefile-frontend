@@ -1,0 +1,25 @@
+<div id="precis" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Case overview</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({precis:precis})" name="precisSection">
+
+      <div class="form-group">
+        <label for="urn">URN</label>
+        <div>
+          <input type="text" ng-model="urn" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="precis.brief_description_of_case">Provide a precis of the essential case facts which are objective, fair and balanced by setting out the “story” in a chronological order.</label>
+        <div>
+          <textarea ng-model="precis.brief_description_of_case" class="form-control" placeholder="Add details here" rows="5"></textarea>
+        </div>
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>
