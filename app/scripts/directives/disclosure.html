@@ -1,0 +1,54 @@
+<div id="disclosure" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Disclosure</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({disclosure:disclosure})" name="disclosureSection">
+
+      <div class="form-group">
+        <label for="disclosure.disclose_unused_material">Do you have unused material to disclose?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="disclosure.disclose_unused_material" class="jqr-publisher" value="yes"
+              ng-model="disclosure.disclose_unused_material"
+              data-jqr-publish-events="disclosure.disclose_unused_material"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="disclosure.disclose_unused_material" class="jqr-publisher" value="no"
+              ng-model="disclosure.disclose_unused_material"
+              data-jqr-publish-events="disclosure.disclose_unused_material"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="disclosure.disclose_unused_material" data-jqr-subscribe-values="yes">
+
+        <div class="form-group">
+          <label for="disclosure.officer_in_the_case">In accordance with Common Law I certify to the best of my knowledge and belief that there is no relevant unused material that might reasonably assist the defence with the early preparation of their case or at a bail hearing.</label>
+          <div>
+            <input type="text" ng-model="disclosure.officer_in_the_case" class="form-control" placeholder="Add details here" rows="5"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="disclosure.officer_in_the_case_signature_date">Date</label>
+          <div>
+            <input type="text" ng-model="disclosure.officer_in_the_case_signature_date" class="form-control" placeholder="Add details here" rows="5"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="disclosure.details_of_relevant_unused_material">Enter brief details of the relevant unused material.</label>
+          <div>
+            <textarea ng-model="disclosure.details_of_relevant_unused_material" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>
