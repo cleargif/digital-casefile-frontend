@@ -1,0 +1,64 @@
+<div id="courtorder" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Court Order</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({courtorder:courtorder})" name="courtorderSection">
+
+      <div class="form-group">
+        <label for="courtorder.apply_for_courtorder">Do you wish to make an application for a Court Order?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="courtorder.apply_for_courtorder" class="jqr-publisher" value="yes"
+              ng-model="courtorder.apply_for_courtorder"
+              data-jqr-publish-events="courtorder.apply_for_courtorder"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="courtorder.apply_for_courtorder" class="jqr-publisher" value="no"
+              ng-model="courtorder.apply_for_courtorder"
+              data-jqr-publish-events="courtorder.apply_for_courtorder"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="courtorder.apply_for_courtorder" data-jqr-subscribe-values="yes">
+
+        <div class="form-group">
+          <label for="name">Court Order Title</label>
+          <select class="form-control" ng-model="courtorder.title">
+            <option ng-selected="{{order.value == courtorder.title}}" ng-repeat="order in orderTitles" value="{{order.value}}">
+              {{order.name}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="courtorder.court_order_title_other">Enter title if “Other” selected</label>
+          <div>
+            <input type="text" ng-model="courtorder.court_order_title_other" class="form-control" placeholder="Add details here" rows="5"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="courtorder.reason_for_request">Please specify your reason for the request in accordance with statue.</label>
+          <div>
+            <textarea ng-model="courtorder.reason_for_request" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="courtorder.conditions">Please specify a list of conditions for the court order:</label>
+          <div>
+            <textarea ng-model="courtorder.conditions" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+
+  </div>
+</div>
