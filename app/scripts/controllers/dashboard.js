@@ -10,9 +10,20 @@
 angular.module('digitalCasefileApp')
   .controller('DashboardCtrl', function ($scope, localstore) {
 
+    var $spinner = angular.element('#spinner');
+    var $table = angular.element('#table');
+
     function loadData() {
+
+      $spinner.show();
+      $table.hide();
+
       localstore.getAll().then(function () {
+
+        $spinner.hide();
+        $table.show();
         $scope.data = localstore.ref();
+
       });
     }
 
@@ -20,8 +31,8 @@ angular.module('digitalCasefileApp')
       loadData();
     };
 
-    $scope.newCasefile = function(){
-      localstore.newCasefile().then(function(){
+    $scope.newCasefile = function () {
+      localstore.newCasefile().then(function () {
         $scope.reloadData();
       });
     };
