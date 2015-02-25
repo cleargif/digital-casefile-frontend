@@ -1,28 +1,22 @@
 'use strict';
 
-describe('Controller: DashboardCtrl', function () {
+describe('Controller: DcfdeleteCtrl', function () {
 
   // load the controller's module
   beforeEach(module('digitalCasefileApp'));
 
-  var DashboardCtrl,
+  var DcfdeleteCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    DashboardCtrl = $controller('DashboardCtrl', {
+    DcfdeleteCtrl = $controller('DcfdeleteCtrl', {
       $scope: scope
     });
   }));
 
-  it('should have a newCasefile method', function() {
-    expect(scope.newCasefile).toBeDefined();
-  });
-
   it('should attach tableParams to the scope', function () {
     expect(scope.tableParams).toBeDefined();
   });
-
-
 });

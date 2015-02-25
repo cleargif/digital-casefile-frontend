@@ -37,4 +37,9 @@ describe('Service: localstore', function () {
     expect(localstore.newCasefile).toBeDefined();
   });
 
+  it('should behave a newCasefile method', function() {
+    expect(localstore.deleteCasefile).toBeDefined();
+  });
+
+
 });

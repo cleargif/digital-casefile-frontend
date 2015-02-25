@@ -43,6 +43,10 @@ angular
       templateUrl: 'views/contactsheet.html',
       controller: 'ContactsheetCtrl'
     })
+    .when('/dcfdelete', {
+      templateUrl: 'views/dcfdelete.html',
+      controller: 'DcfdeleteCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
