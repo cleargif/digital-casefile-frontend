@@ -12,14 +12,14 @@
     <!-- Table -->
     <table ng-table="tableParams" show-filter="true" class="table">
       <tr ng-repeat="row in $data">
-        <td  width="10%" data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">
+        <td  width="10%" data-title="'Id'" data-sortable="'id'" filter="{ 'id': 'text' }">
             {{ row.id }}
         </td>
-        <td width="50%" data-title="'URN'" sortable="'urn'" filter="{ 'urn': 'text' }">
+        <td width="50%" data-title="'URN'" data-sortable="'urn'" filter="{ 'urn': 'text' }">
             {{ row.urn }}
         </td>
 
-        <td data-title="'Last updated'" sortable="'updated_at'" filter="{ 'updated_at': 'text' }">
+        <td data-title="'Last updated'" data-sortable="'updated_at'" filter="{ 'updated_at': 'text' }">
             {{ row.updated_at | date:'medium' }}
         </td>
         <td data-title="'Actions'"><a href="#/casefile/{{ row.id }}">Edit</a></td>
