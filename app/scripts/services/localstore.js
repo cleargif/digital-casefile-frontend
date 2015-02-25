@@ -42,6 +42,20 @@ angular.module('digitalCasefileApp')
       error(function () {});
     }
 
+    function deleteCasefile(id) {
+      return $http.delete(baseURL + id, {
+        //cache: true
+        transformResponse: function (message) {
+          return {
+            data: message
+          };
+        }
+      }).
+      success(function () {
+      }).
+      error(function () {});
+    }
+
     function storeData(data, id) {
       return $http({
         method: 'PUT',
@@ -50,8 +64,7 @@ angular.module('digitalCasefileApp')
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         },
-      }).success(function () {
-      }).
+      }).success(function () {}).
       error(function () {});
     }
 
@@ -67,10 +80,13 @@ angular.module('digitalCasefileApp')
       getCaseById: function (id) {
         return getCaseById(id);
       },
+      deleteCasefile: function (id) {
+        return deleteCasefile(id);
+      },
       storeData: function (data, id) {
         return storeData(data, id);
       },
-      newCasefile: function(){
+      newCasefile: function () {
         return newCasefile();
       }
     };

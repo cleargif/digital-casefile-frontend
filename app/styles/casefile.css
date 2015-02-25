@@ -61,7 +61,7 @@ body.small-footer #footer {
   display:none;
 }
 
-.casefile .panel-title:hover{
+.casefile .panel-title:hover, .dcfdelete .delete:hover{
   cursor: pointer;
 }
 
