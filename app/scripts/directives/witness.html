@@ -1,0 +1,152 @@
+<div id="witness" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Witness</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({witness:witness})" name="witnessSection">
+
+      <!-- victim_or_witness -->
+      <div class="form-group">
+        <label for="witness.victim_or_witness">Is the Witness:</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="witness.victim_or_witness" class="jqr-publisher" value="victim"
+              ng-model="witness.victim_or_witness"
+              data-jqr-publish-events="witness.victim_or_witness"
+              > A Victim?
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="witness.victim_or_witness" class="jqr-publisher" value="key-witness"
+              ng-model="witness.victim_or_witness"
+              data-jqr-publish-events="witness.victim_or_witness"
+              > Providing a Key Witness Statement?
+          </label>
+        </div>
+      </div>
+
+      <!-- AAAA BBBBB -->
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="witness.victim_or_witness" data-jqr-subscribe-values="victim|key-witness">
+        <!-- witness_type -->
+        <div class="form-group">
+          <label for="name">Witnes Type?</label>
+          <select class="form-control" ng-model="witness.witness_type">
+            <option ng-selected="{{type.value == witness.witness_type}}" ng-repeat="type in witnesTypeList" value="{{type.value}}">
+                {{type.name}}
+              </option>
+          </select>
+        </div>
+
+        <!-- nature_of_involvement -->
+        <div class="form-group">
+          <label for="witness.nature_of_involvement">What is the nature of the Witnesses involvement in the Case?</label>
+          <div>
+            <textarea ng-model="witness.nature_of_involvement" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+        <!-- evidence_they_can_give -->
+        <div class="form-group">
+          <label for="witness.evidence_they_can_give">What evidence can they provide?</label>
+          <div>
+            <textarea ng-model="witness.evidence_they_can_give" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+
+        <!-- interpretor_required -->
+        <div class="form-group">
+          <label for="witness.interpretor_required">Interpreter Required?</label>
+          <div class="jqr-delegate-hook">
+            <label class="radio-inline">
+              <input type="radio" name="witness.interpretor_required" class="jqr-publisher" value="yes"
+                ng-model="witness.interpretor_required"
+                data-jqr-publish-events="witness.interpretor_required"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="witness.interpretor_required" class="jqr-publisher" value="no"
+                ng-model="witness.interpretor_required"
+                data-jqr-publish-events="witness.interpretor_required"
+                > No
+            </label>
+          </div>
+        </div>
+
+        <!-- interpretor_language_or_dialect -->
+        <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="witness.interpretor_required" data-jqr-subscribe-values="yes">
+          <label for="witness.interpretor_language_or_dialect">Please provide language or dialect.</label>
+          <div>
+            <input type="text" ng-model="witness.interpretor_language_or_dialect" class="form-control" placeholder="Add details here">
+          </div>
+        </div>
+
+        <!-- occupation -->
+        <div class="form-group">
+          <label for="witness.occupation">Occupation</label>
+          <div>
+            <input type="text" ng-model="witness.occupation" class="form-control" placeholder="Add details here">
+          </div>
+        </div>
+
+        <!-- date_of_birth -->
+        <div class="form-group">
+          <label for="witness.date_of_birth">Date of birth</label>
+          <div>
+            <input type="text" ng-model="witness.date_of_birth" class="form-control" placeholder="Add details here">
+          </div>
+        </div>
+      </div>
+
+      <!-- AAAA -->
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="witness.victim_or_witness" data-jqr-subscribe-values="victim">
+        <!-- victim_code_requirements_met -->
+        <div class="form-group">
+          <label for="witness.victim_code_requirements_met">Has the victim been advised about their right to make a Victim Personal Statement (or Impact Statement for Business)?</label>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="witness.victim_code_requirements_met" value="yes"
+                ng-model="witness.victim_code_requirements_met"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="witness.victim_code_requirements_met" value="no"
+                ng-model="witness.victim_code_requirements_met"
+                > No
+            </label>
+          </div>
+        </div>
+
+        <!-- victim_wish_to_attend_court -->
+        <div class="form-group">
+          <label for="name">Does the victim wish to attend court to read their VPS/ISB to the court?</label>
+          <select class="form-control" ng-model="witness.victim_wish_to_attend_court">
+            <option ng-selected="{{type.value == witness.victim_wish_to_attend_court}}" ng-repeat="type in witnesWishList" value="{{type.value}}">
+                {{type.name}}
+              </option>
+          </select>
+        </div>
+
+        <!-- rep_wish -->
+        <div class="form-group">
+          <label for="name">Does a community representative wish to attend court to read their VPS/ISB to the court?</label>
+          <select class="form-control" ng-model="witness.rep_wish">
+            <option ng-selected="{{type.value == witness.rep_wish}}" ng-repeat="type in witnesWishList" value="{{type.value}}">
+                {{type.name}}
+              </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- BBBBB -->
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="witness.victim_or_witness" data-jqr-subscribe-values="key-witness">
+        <!-- reason_dob_not_provided -->
+        <div class="form-group">
+          <label for="witness.reason_dob_not_provided">If the Witness is unable or un-willing to provide a date of birth, please provide a reason.</label>
+          <div>
+            <textarea ng-model="witness.reason_dob_not_provided" class="form-control" placeholder="Add details here" rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>

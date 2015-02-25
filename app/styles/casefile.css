@@ -61,6 +61,17 @@ body.small-footer #footer {
   display:none;
 }
 
+.casefile h4{
+  border-bottom:1px solid gray;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.casefile h3.panel-title{
+  text-decoration: underline;
+  color: blue;
+}
+
 .casefile .panel-title:hover, .dcfdelete .delete:hover{
   cursor: pointer;
 }
