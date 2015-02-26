@@ -1,0 +1,87 @@
+<div id="offence" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Offence</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({offence:offence})" name="offenceSection">
+
+
+      <div class="form-group">
+        <label for="name">Select the offence title</label>
+        <select class="form-control" ng-model="offence.offence_title">
+          <option ng-selected="{{offence.value == offence.offence_title}}" ng-repeat="offence in offenceTitles" value="{{offence.value}}">
+              {{offence.name}}
+            </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        +charge_wording: String Structured offence wording from PNLD. (I’ll look this up for Retail theft when I have access to the CPS network).
+      </div>
+
+      <div class="form-group">
+        <label for="offence.signed_charge_sheet">“The defendant was given a copy of the MG4 charge and bail sheet and has signed it”</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="offence.signed_charge_sheet" value="yes"
+              ng-model="offence.signed_charge_sheet"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="offence.signed_charge_sheet" value="no"
+              ng-model="offence.signed_charge_sheet"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="offence.witness_statements_meet_points_to_prove">Has the key/eye witness(es) statement(s), for the case, provided all the evidence and established the points to prove?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="offence.witness_statements_meet_points_to_prove" class="jqr-publisher" value="yes"
+              ng-model="offence.witness_statements_meet_points_to_prove"
+              data-jqr-publish-events="offence.witness_statements_meet_points_to_prove"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="offence.witness_statements_meet_points_to_prove" class="jqr-publisher" value="no"
+              ng-model="offence.witness_statements_meet_points_to_prove"
+              data-jqr-publish-events="offence.witness_statements_meet_points_to_prove"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group jqr-subscriber" style="display:none" data-jqr-subscribe-events="offence.witness_statements_meet_points_to_prove" data-jqr-subscribe-values="no">
+        <label for="offence.points_to_prove_met_by">If the eye/key witness(es) statement provides all the evidence and establishes the points to prove, then nothing further is required. Otherwise explain how the points to prove are met if not outlined in the witness statement(s)</label>
+        <div>
+          <textarea ng-model="offence.points_to_prove_met_by" class="form-control" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="offence.comments_on_caution_or_arrest">Comments on caution or arrest:</label>
+        <div>
+          <textarea ng-model="offence.comments_on_caution_or_arrest" class="form-control" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">State the Anticipated Plea for this Offence:</label>
+        <select class="form-control" ng-model="offence.anticipated_plea">
+          <option ng-selected="{{plea.value == offence.anticipated_plea}}" ng-repeat="plea in pleaOptions" value="{{plea.value}}">
+              {{plea.name}}
+            </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="offence.cash_possessed_on_arrest">Was the defendant in possession of any cash on arrest?</label>
+        <input type="text" class="form-control" id="offence.cash_possessed_on_arrest" ng-model="offence.cash_possessed_on_arrest">
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>
