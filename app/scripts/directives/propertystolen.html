@@ -1,0 +1,87 @@
+<div id="propertystolen" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Property Stolen</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" ng-submit="store({propertystolen:propertystolen})" name="propertystolenSection">
+
+      <div class="form-group">
+        <label for="properystolen.description">Describe property the stolen:</label>
+        <div>
+          <textarea ng-model="properystolen.description" class="form-control" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="properystolen.value_property_stolen">What is the value of the property stolen?</label>
+        <div>
+          <input type="text" ng-model="properystolen.value_property_stolen" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="propertystolen.property_recovered">Has the property been recovered?</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="propertystolen.property_recovered" value="yes"
+              ng-model="propertystolen.property_recovered"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="propertystolen.property_recovered" value="no"
+              ng-model="propertystolen.property_recovered"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="propertystolen.in_saleable_condition">Is the property in a saleable condition?</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="propertystolen.in_saleable_condition" value="yes"
+              ng-model="propertystolen.in_saleable_condition"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="propertystolen.in_saleable_condition" value="no"
+              ng-model="propertystolen.in_saleable_condition"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="propertystolen.any_loss_or_damage">Is there any loss or damage?</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="propertystolen.any_loss_or_damage" value="yes"
+              ng-model="propertystolen.any_loss_or_damage"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="propertystolen.any_loss_or_damage" value="no"
+              ng-model="propertystolen.any_loss_or_damage"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="properystolen.specify_loss_or_damage">If Yes, specify any loss or damage:</label>
+        <div>
+          <textarea ng-model="properystolen.specify_loss_or_damage" class="form-control" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="properystolen.value_loss_or_damage">What is the value of the loss or damage?</label>
+        <div>
+          <input type="text" ng-model="properystolen.value_loss_or_damage" class="form-control">
+        </div>
+      </div>
+
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</div>
