@@ -13,7 +13,7 @@ angular.module('digitalCasefileApp')
       restrict: 'E',
       scope: {
         precis: '=data',
-        urn: '=urn',
+        urncode: '=urncode',
         store: '&'
       },
       replace: true,

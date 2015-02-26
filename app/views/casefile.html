@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <th>{{ casefile.id }}</th>
-          <td>{{ casefile.urn }}</td>
+          <td>{{ casefile.urn_code }}</td>
           <td>{{ casefile.created_at | date:'medium' }}</td>
           <td>{{ casefile.updated_at | date:'medium' }}</td>
         </tr><!-- end ngRepeat: row in data -->
@@ -24,7 +24,7 @@
     </table>
 
   <h4>Pre-Questions</h4>
-  <precis data="casefile.blob.precis" urn="casefile.urn" store="saveCtrl({precis: precis})"></precis>
+  <precis data="casefile.blob.precis" urncode="casefile.urn_code" store="saveCtrl({precis: precis})"></precis>
   <defendant data="casefile.blob.defendant" store="saveCtrl({defendant: defendant})"></defendant>
 
   <h4>The Offence</h4>
