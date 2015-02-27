@@ -18,7 +18,7 @@
           <td>{{ casefile.urn_code }}</td>
           <td>{{ casefile.created_at | date:'medium' }}</td>
           <td>{{ casefile.updated_at | date:'medium' }}</td>
-        </tr><!-- end ngRepeat: row in data -->
+        </tr>
 
       </tbody>
     </table>
@@ -29,6 +29,7 @@
 
   <h4>The Offence</h4>
   <offence data="casefile.blob.offence" store="saveCtrl({offence: offence})"></offence>
+  <propertydamaged data="casefile.blob.propertydamaged" store="saveCtrl({propertydamaged: propertydamaged})"></propertydamaged>
   <propertystolen data="casefile.blob.propertystolen" store="saveCtrl({propertystolen: propertystolen})"></propertystolen>
 
 
