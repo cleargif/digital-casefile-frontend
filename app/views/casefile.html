@@ -14,9 +14,9 @@
       </thead>
       <tbody>
         <tr>
-          <th>{{ casefile.id }}</th>
-          <td>{{ casefile.urn_code }}</td>
-          <td>{{ casefile.created_at | date:'medium' }}</td>
+          <th>{{ ::casefile.id }}</th>
+          <td>{{ ::casefile.urn_code }}</td>
+          <td>{{ ::casefile.created_at | date:'medium' }}</td>
           <td>{{ casefile.updated_at | date:'medium' }}</td>
         </tr>
 
