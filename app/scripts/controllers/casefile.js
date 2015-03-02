@@ -9,7 +9,7 @@
  */
 angular.module('digitalCasefileApp')
   .controller('CasefileCtrl', function ($scope, $routeParams, localstore, $timeout) {
-    console.log('CasefileCtrl');
+    // console.log('CasefileCtrl');
 
     localstore.getCaseById(parseInt($routeParams.urn, 10)).then(function (response) {
       $scope.casefile = response.data;

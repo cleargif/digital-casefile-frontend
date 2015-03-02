@@ -10,6 +10,12 @@
 angular.module('digitalCasefileApp')
   .controller('DcfdeleteCtrl', function ($scope, localstore, NgTableParams, $filter, $window) {
 
+    var defGetAll = localstore.getAll();
+
+    defGetAll.then(function (obj) {
+      $scope.data = obj.data;
+    });
+
     $scope.tableParams = new NgTableParams({
       page: 1, // show first page
       count: 10, // count per page
@@ -22,9 +28,8 @@ angular.module('digitalCasefileApp')
     }, {
       total: 0, // length of data
       getData: function ($defer, params) {
-        localstore.getAll().then(function () {
-          $scope.data = localstore.ref();
-          // use build-in angular filter
+
+        defGetAll.then(function () {
           var filteredData = params.filter() ?
             $filter('filter')($scope.data, params.filter()) :
             $scope.data;
@@ -34,8 +39,10 @@ angular.module('digitalCasefileApp')
 
           params.total(orderedData.length); // set total for recalc pagination
           $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-
         });
+        // use build-in angular filter
+
+
 
       }
     });

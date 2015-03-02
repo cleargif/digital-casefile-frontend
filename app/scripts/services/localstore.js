@@ -52,8 +52,14 @@ angular.module('digitalCasefileApp')
         }
       }).
       success(function () {
-      }).
-      error(function () {});
+        _.find(_container, function (obj, idx) {
+          if(obj.id===id){
+            _container.splice(idx, 1);
+            return true;
+          }
+        });
+
+      }).error(function () {});
     }
 
     function storeData(data, id) {
