@@ -8,7 +8,7 @@
  * Controller of the digitalCasefileApp
  */
 angular.module('digitalCasefileApp')
-  .controller('DashboardCtrl', function ($scope, localstore, NgTableParams, $filter) {
+  .controller('DashboardCtrl', function ($scope, localstore, NgTableParams, $filter, $location) {
 
     $scope.tableParams = new NgTableParams({
       page: 1, // show first page
@@ -42,8 +42,8 @@ angular.module('digitalCasefileApp')
 
 
     $scope.newCasefile = function () {
-      localstore.newCasefile().then(function () {
-        $scope.tableParams.reload();
+      localstore.newCasefile().then(function (response) {
+        $location.path('casefile/' + response.data.id);
       });
     };
 
