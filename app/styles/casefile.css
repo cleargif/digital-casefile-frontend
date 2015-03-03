@@ -122,3 +122,21 @@ body.small-footer #footer {
   padding-left: 20px;
 }
 
+/* Small devices (tablets, 768px and up) */
+@media screen and (max-width: 991px) {
+  #fixed-header {
+
+    left: 0;
+    right: 0;
+    top: 40px;
+    background-color: white;
+    z-index: 1000;
+    border-bottom: 2px solid lightgray;
+}
+  #aside{
+    display: none;
+  }
+  .container.theme-showcase{
+    margin-top:240px;
+  }
+}
