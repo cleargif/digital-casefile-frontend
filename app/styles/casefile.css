@@ -44,7 +44,7 @@ body.small-footer #footer {
 }
 
 .container.theme-showcase{
-  margin-top:50px;
+  margin-top:220px;
 }
 
 
@@ -81,6 +81,15 @@ body.small-footer #footer {
   display:inline-block
 }
 
+#fixed-header{
+  position: fixed;
+  left: 40px;
+  right: 40px;
+  top: 40px;
+  background-color: white;
+  z-index: 1000;
+  border-bottom: 2px solid lightgray;
+}
 
 
 .ng-table {
@@ -96,7 +105,6 @@ body.small-footer #footer {
   max-width: 300px;
   width:200px;
   position:fixed;
-  margin-top:30px;
 }
 
 #aside li{

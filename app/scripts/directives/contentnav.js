@@ -92,7 +92,7 @@ angular.module('digitalCasefileApp')
           var $anchor = angular.element('#' + $el.data('anchor'));
 
           // check if the parent is open / closed
-          var $anchoParent = $anchor.closest('.panel-info');
+          var $anchoParent = $anchor.closest('.panel-wrapper');
 
 
 

@@ -51,5 +51,5 @@ angular
       redirectTo: '/'
     });
 }).run(['$anchorScroll', function ($anchorScroll) {
-  $anchorScroll.yOffset = 65; // always scroll by 50 extra pixels
+  $anchorScroll.yOffset = 210; // always scroll by 50 extra pixels
 }]);
