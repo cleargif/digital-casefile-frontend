@@ -1,4 +1,4 @@
-<div id="propertystolen" class="panel panel-default">
+  <div id="propertystolen" class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Property Stolen</h3>
   </div>
@@ -6,78 +6,106 @@
     <form role="form" ng-submit="store({propertystolen:propertystolen})" name="propertystolenSection">
 
       <div class="form-group">
-        <label for="properystolen.description">Describe property the stolen:</label>
+        <label for="propertystolen.description">Describe property the stolen:</label>
         <div>
-          <textarea ng-model="properystolen.description" class="form-control" rows="5"></textarea>
+          <textarea ng-model="propertystolen.description" class="form-control" rows="5"></textarea>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="properystolen.value_property_stolen">What is the value of the property stolen?</label>
+        <label for="propertystolen.value_property_stolen">What is the value of the property stolen?</label>
         <div>
-          <input type="text" ng-model="properystolen.value_property_stolen" class="form-control">
+          <input type="text" ng-model="propertystolen.value_property_stolen" class="form-control">
         </div>
       </div>
 
       <div class="form-group">
         <label for="propertystolen.property_recovered">Has the property been recovered?</label>
-        <div>
+        <div class="jqr-delegate-hook">
           <label class="radio-inline">
-            <input type="radio" name="propertystolen.property_recovered" value="yes"
+            <input type="radio" name="propertystolen.property_recovered" class="jqr-publisher" value="yes"
               ng-model="propertystolen.property_recovered"
+              data-jqr-publish-events="propertystolen.property_recovered"
               > Yes
           </label>
           <label class="radio-inline">
-            <input type="radio" name="propertystolen.property_recovered" value="no"
+            <input type="radio" name="propertystolen.property_recovered" class="jqr-publisher" value="no"
               ng-model="propertystolen.property_recovered"
+              data-jqr-publish-events="propertystolen.property_recovered"
               > No
           </label>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="propertystolen.in_saleable_condition">Is the property in a saleable condition?</label>
-        <div>
-          <label class="radio-inline">
-            <input type="radio" name="propertystolen.in_saleable_condition" value="yes"
-              ng-model="propertystolen.in_saleable_condition"
-              > Yes
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="propertystolen.in_saleable_condition" value="no"
-              ng-model="propertystolen.in_saleable_condition"
-              > No
-          </label>
-        </div>
-      </div>
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="propertystolen.property_recovered" data-jqr-subscribe-values="yes">
 
-      <div class="form-group">
-        <label for="propertystolen.any_loss_or_damage">Is there any loss or damage?</label>
-        <div>
-          <label class="radio-inline">
-            <input type="radio" name="propertystolen.any_loss_or_damage" value="yes"
-              ng-model="propertystolen.any_loss_or_damage"
-              > Yes
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="propertystolen.any_loss_or_damage" value="no"
-              ng-model="propertystolen.any_loss_or_damage"
-              > No
-          </label>
+        <div class="form-group">
+          <label for="propertystolen.in_saleable_condition">Is the property in a saleable condition?</label>
+          <div class="jqr-delegate-hook">
+            <label class="radio-inline">
+              <input type="radio" name="propertystolen.in_saleable_condition" class="jqr-publisher" value="yes"
+                ng-model="propertystolen.in_saleable_condition"
+                data-jqr-publish-events="propertystolen.in_saleable_condition"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="propertystolen.in_saleable_condition" class="jqr-publisher" value="no"
+                ng-model="propertystolen.in_saleable_condition"
+                data-jqr-publish-events="propertystolen.in_saleable_condition"
+                > No
+            </label>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="properystolen.specify_loss_or_damage">If Yes, specify any loss or damage:</label>
-        <div>
-          <textarea ng-model="properystolen.specify_loss_or_damage" class="form-control" rows="5"></textarea>
+        <!-- YES -->
+        <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="propertystolen.in_saleable_condition" data-jqr-subscribe-values="yes">
+
+          <div class="form-group">
+            <label for="propertystolen.saleable_condition">Describe the saleable condition?</label>
+            <div>
+              <textarea ng-model="propertystolen.saleable_condition" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="propertystolen.saleable_condition_value">Value of the saleable condition</label>
+            <div>
+              <input type="text" name="propertystolen.saleable_condition_value" ng-model="propertystolen.saleable_condition_value" class="form-control">
+            </div>
+          </div>
+
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="properystolen.value_loss_or_damage">What is the value of the loss or damage?</label>
-        <div>
-          <input type="text" ng-model="properystolen.value_loss_or_damage" class="form-control">
+        <!-- NO -->
+        <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="propertystolen.in_saleable_condition" data-jqr-subscribe-values="no">
+
+          <div class="form-group">
+            <label for="propertystolen.property_been_replaced">Has the property been replaced?</label>
+            <div class="jqr-delegate-hook">
+              <label class="radio-inline">
+                <input type="radio" name="propertystolen.property_been_replaced" class="jqr-publisher" value="yes"
+                  ng-model="propertystolen.property_been_replaced"
+                  data-jqr-publish-events="propertystolen.property_been_replaced"
+                  > Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="propertystolen.property_been_replaced" class="jqr-publisher" value="no"
+                  ng-model="propertystolen.property_been_replaced"
+                  data-jqr-publish-events="propertystolen.property_been_replaced"
+                  > No
+              </label>
+            </div>
+          </div>
+
+          <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="propertystolen.property_been_replaced" data-jqr-subscribe-values="yes">
+            <div class="form-group">
+              <label for="propertystolen.cost_of_replacement">Cost of the replacement</label>
+              <div>
+                <input type="text" ng-model="propertystolen.cost_of_replacement" class="form-control">
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
