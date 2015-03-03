@@ -75,46 +75,46 @@ angular.module('digitalCasefileApp')
           anchor: 'sign-off-top'
         }];
 
-        element.on('click', function (event) {
-          // Stop propogation
-          event.stopPropagation();
+        // element.on('click', function (event) {
+        //   // Stop propogation
+        //   event.stopPropagation();
 
-          // cache the listner so we can remove it
-          var unblock = scope.$on('$locationChangeStart', function (ev) {
-            ev.preventDefault();
-          });
-
-
-          // cache the event target element
-          var $el = angular.element(event.target);
-
-          // find the anchor data
-          var $anchor = angular.element('#' + $el.data('anchor'));
-
-          // check if the parent is open / closed
-          var $anchoParent = $anchor.closest('.panel-wrapper');
+        //   // cache the listner so we can remove it
+        //   var unblock = scope.$on('$locationChangeStart', function (ev) {
+        //     ev.preventDefault();
+        //   });
 
 
+        //   // cache the event target element
+        //   var $el = angular.element(event.target);
 
-          // if parent closed then open it
-          if (!$anchoParent.find('.panel-body').is(':visible')) {
-            $anchoParent.find('.panel-body').show();
-          }
+        //   // find the anchor data
+        //   var $anchor = angular.element('#' + $el.data('anchor'));
 
-          // set the hash and scroll
-          $location.hash($el.data('anchor'));
-          $anchorScroll();
+        //   // check if the parent is open / closed
+        //   var $anchoParent = $anchor.closest('.panel-wrapper');
 
-          // if close all
-          // works better here than in a branch of a if / else.
-          // Interface is less jerky
-          if ($el.data('anchor') === 'closeall') {
-            scope.closeAll();
-          }
 
-          // unbind the event
-          unblock();
-        });
+
+        //   // if parent closed then open it
+        //   if (!$anchoParent.find('.panel-body').is(':visible')) {
+        //     $anchoParent.find('.panel-body').show();
+        //   }
+
+        //   // set the hash and scroll
+        //   $location.hash($el.data('anchor'));
+        //   $anchorScroll();
+
+        //   // if close all
+        //   // works better here than in a branch of a if / else.
+        //   // Interface is less jerky
+        //   if ($el.data('anchor') === 'closeall') {
+        //     scope.closeAll();
+        //   }
+
+        //   // unbind the event
+        //   unblock();
+        // });
 
       }
     };

@@ -95,7 +95,9 @@ body.small-footer #footer {
 .ng-table {
 
 }
-
+.dashboard, .disclaimer{
+  margin-top:-150px;
+}
 .ng-table-counts{
   margin: 20px 0;
 }
@@ -108,12 +110,12 @@ body.small-footer #footer {
 }
 
 #aside li{
-  color: gray;
-  text-decoration: underline;
+  /*color: gray;
+  text-decoration: underline;*/
 }
 
 #aside li:hover{
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 
 #aside ul{
