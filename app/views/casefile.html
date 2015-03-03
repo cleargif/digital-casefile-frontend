@@ -1,93 +1,85 @@
 <div class="row">
   <div class="col-md-3">
-    <ul class="nav nav-pills nav-stacked" style="max-width: 300px; width:200px; position:fixed;margin-top:30px;">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Messages</a></li>
-    </ul>
+    <contentnav></contentnav>
   </div>
   <div class="col-md-9">
     <div class="casefile" collapse>
-  <header>
-    <h1>Casefile</h1>
-  </header>
+      <header>
+        <h1>Casefile</h1>
+      </header>
 
-  <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>URN</th>
-          <th>Date created</th>
-          <th>Last updated</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>{{ ::casefile.id }}</th>
-          <td>{{ ::casefile.urn_code }}</td>
-          <td>{{ ::casefile.created_at | date:'medium' }}</td>
-          <td>{{ casefile.updated_at | date:'medium' }}</td>
-        </tr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>URN</th>
+            <th>Date created</th>
+            <th>Last updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>{{ ::casefile.id }}</th>
+            <td>{{ ::casefile.urn_code }}</td>
+            <td>{{ ::casefile.created_at | date:'medium' }}</td>
+            <td>{{ casefile.updated_at | date:'medium' }}</td>
+          </tr>
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
 
+      <div id="pre-questions" class="panel panel-info panel-wrapper">
+        <div class="panel-heading">
+          <h3 class="panel-title">Pre-Questions</h3>
+        </div>
+        <div class="panel-body">
+          <precis data="casefile.blob.precis" urncode="casefile.urn_code" store="saveCtrl({precis: precis})"></precis>
+          <defendant data="casefile.blob.defendant" store="saveCtrl({defendant: defendant})"></defendant>
+        </div>
+      </div>
 
-  <div id="pre-questions" class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">Pre-Questions</h3>
-    </div>
-    <div class="panel-body">
-      <precis data="casefile.blob.precis" urncode="casefile.urn_code" store="saveCtrl({precis: precis})"></precis>
-      <defendant data="casefile.blob.defendant" store="saveCtrl({defendant: defendant})"></defendant>
+      <div id="offence-top" class="panel panel-info panel-wrapper">
+        <div class="panel-heading">
+          <h3 class="panel-title">The Offence</h3>
+        </div>
+        <div class="panel-body">
+          <offence data="casefile.blob.offence" store="saveCtrl({offence: offence})"></offence>
+          <propertydamaged data="casefile.blob.propertydamaged" store="saveCtrl({propertydamaged: propertydamaged})"></propertydamaged>
+          <propertystolen data="casefile.blob.propertystolen" store="saveCtrl({propertystolen: propertystolen})"></propertystolen>
+        </div>
+      </div>
+
+      <div id="retail-theft" class="panel panel-info panel-wrapper">
+        <div class="panel-heading">
+          <h3 class="panel-title">Retail Theft</h3>
+        </div>
+        <div class="panel-body">
+          <interview data="casefile.blob.interview" store="saveCtrl({interview: interview})"></interview>
+          <mme data="casefile.blob.mme" store="saveCtrl({mme: mme})"></mme>
+          <witness data="casefile.blob.witness" store="saveCtrl({witness: witness})"></witness>
+          <compensation data="casefile.blob.compensation" store="saveCtrl({compensation: compensation})"></compensation>
+          <courtorder data="casefile.blob.courtorder" store="saveCtrl({courtorder: courtorder})"></courtorder>
+        </div>
+      </div>
+
+      <div id="case-review" class="panel panel-info panel-wrapper">
+        <div class="panel-heading">
+          <h3 class="panel-title">Case Review</h3>
+        </div>
+        <div class="panel-body">
+          <disclosure data="casefile.blob.disclosure" store="saveCtrl({disclosure: disclosure})"></disclosure>
+        </div>
+      </div>
+
+      <div id="sign-off-top" class="panel panel-info panel-wrapper">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sign-off</h3>
+        </div>
+        <div class="panel-body">
+          <signoff data="casefile.blob.signoff" store="saveCtrl({signoff: signoff})"></signoff>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <div id="offence" class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">The Offence</h3>
-    </div>
-    <div class="panel-body">
-      <offence data="casefile.blob.offence" store="saveCtrl({offence: offence})"></offence>
-      <propertydamaged data="casefile.blob.propertydamaged" store="saveCtrl({propertydamaged: propertydamaged})"></propertydamaged>
-      <propertystolen data="casefile.blob.propertystolen" store="saveCtrl({propertystolen: propertystolen})"></propertystolen>
-    </div>
-  </div>
-
-  <div id="offence" class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">Retail Theft</h3>
-    </div>
-    <div class="panel-body">
-      <interview data="casefile.blob.interview" store="saveCtrl({interview: interview})"></interview>
-      <mme data="casefile.blob.mme" store="saveCtrl({mme: mme})"></mme>
-      <witness data="casefile.blob.witness" store="saveCtrl({witness: witness})"></witness>
-      <compensation data="casefile.blob.compensation" store="saveCtrl({compensation: compensation})"></compensation>
-      <courtorder data="casefile.blob.courtorder" store="saveCtrl({courtorder: courtorder})"></courtorder>
-    </div>
-  </div>
-
-  <div id="case-review" class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">Case Review</h3>
-    </div>
-    <div class="panel-body">
-      <disclosure data="casefile.blob.disclosure" store="saveCtrl({disclosure: disclosure})"></disclosure>
-    </div>
-  </div>
-
-  <div id="offence" class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">Sign-off</h3>
-    </div>
-    <div class="panel-body">
-      <signoff data="casefile.blob.signoff" store="saveCtrl({signoff: signoff})"></signoff>
-    </div>
-  </div>
-
 </div>
-  </div>
-</div>
-
-
-

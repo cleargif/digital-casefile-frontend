@@ -90,3 +90,25 @@ body.small-footer #footer {
 .ng-table-counts{
   margin: 20px 0;
 }
+
+
+#aside{
+  max-width: 300px;
+  width:200px;
+  position:fixed;
+  margin-top:30px;
+}
+
+#aside li{
+  color: gray;
+  text-decoration: underline;
+}
+
+#aside li:hover{
+  cursor: pointer;
+}
+
+#aside ul{
+  padding-left: 20px;
+}
+
