@@ -50,4 +50,6 @@ angular
     .otherwise({
       redirectTo: '/'
     });
-});
+}).run(['$anchorScroll', function ($anchorScroll) {
+  $anchorScroll.yOffset = 210; // always scroll by 50 extra pixels
+}]);

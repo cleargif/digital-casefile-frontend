@@ -37,7 +37,6 @@ body.small-footer #footer {
 
 .container {
   width: auto;
-  max-width: 680px;
   padding: 0 15px;
 }
 .container p {
@@ -45,7 +44,7 @@ body.small-footer #footer {
 }
 
 .container.theme-showcase{
-  margin-top:50px;
+  margin-top:220px;
 }
 
 
@@ -82,6 +81,15 @@ body.small-footer #footer {
   display:inline-block
 }
 
+#fixed-header{
+  position: fixed;
+  left: 40px;
+  right: 40px;
+  top: 40px;
+  background-color: white;
+  z-index: 1000;
+  border-bottom: 2px solid lightgray;
+}
 
 
 .ng-table {
@@ -91,3 +99,24 @@ body.small-footer #footer {
 .ng-table-counts{
   margin: 20px 0;
 }
+
+
+#aside{
+  max-width: 300px;
+  width:200px;
+  position:fixed;
+}
+
+#aside li{
+  color: gray;
+  text-decoration: underline;
+}
+
+#aside li:hover{
+  cursor: pointer;
+}
+
+#aside ul{
+  padding-left: 20px;
+}
+
