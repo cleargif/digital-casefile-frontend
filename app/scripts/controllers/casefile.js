@@ -24,7 +24,7 @@ angular.module('digitalCasefileApp')
 
     $timeout(function () {
       angular.element.jqReveal();
-    }, 1000);
+    }, 1500);
 
 
   });
