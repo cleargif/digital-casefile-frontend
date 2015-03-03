@@ -1,11 +1,98 @@
-<div id="propertydamaged" class="panel panel-default">
+  <div id="propertydamaged" class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Property Damaged</h3>
   </div>
   <div class="panel-body">
     <form role="form" ng-submit="store({propertydamaged:propertydamaged})" name="propertydamagedSection">
 
-      <p>Content TBC</p>
+      <div class="form-group">
+        <label for="propertydamaged.description">Describe the damaged property:</label>
+        <div>
+          <textarea ng-model="propertydamaged.description" class="form-control" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="propertydamaged.value_property_damaged">Value of the damaged property?</label>
+        <div>
+          <input type="text" ng-model="propertydamaged.value_property_damaged" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="propertydamaged.property_replaced">Has the property been replaced?</label>
+        <div class="jqr-delegate-hook">
+          <label class="radio-inline">
+            <input type="radio" name="propertydamaged.property_replaced" class="jqr-publisher" value="yes"
+              ng-model="propertydamaged.property_replaced"
+              data-jqr-publish-events="propertydamaged.property_replaced"
+              > Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="propertydamaged.property_replaced" class="jqr-publisher" value="no"
+              ng-model="propertydamaged.property_replaced"
+              data-jqr-publish-events="propertydamaged.property_replaced"
+              > No
+          </label>
+        </div>
+      </div>
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="propertydamaged.property_replaced" data-jqr-subscribe-values="yes">
+
+        <div class="form-group">
+          <label for="propertydamaged.replacement_details">Details of the replacement</label>
+          <div>
+            <textarea ng-model="propertydamaged.replacement_details" class="form-control" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="propertydamaged.replacement_value">Value of the replacement</label>
+          <div>
+            <input type="text" name="propertydamaged.replacement_value" ng-model="propertydamaged.replacement_value" class="form-control">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="propertydamaged.property_replaced" data-jqr-subscribe-values="no">
+
+
+        <div class="form-group">
+          <label for="propertydamaged.property_repaired">Has the property been repaired?</label>
+          <div class="jqr-delegate-hook">
+            <label class="radio-inline">
+              <input type="radio" name="propertydamaged.property_repaired" class="jqr-publisher" value="yes"
+                ng-model="propertydamaged.property_repaired"
+                data-jqr-publish-events="propertydamaged.property_repaired"
+                > Yes
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="propertydamaged.property_repaired" class="jqr-publisher" value="no"
+                ng-model="propertydamaged.property_repaired"
+                data-jqr-publish-events="propertydamaged.property_repaired"
+                > No
+            </label>
+          </div>
+        </div>
+
+        <div class="jqr-subscriber" style="display:none" data-jqr-subscribe-events="propertydamaged.property_repaired" data-jqr-subscribe-values="yes">
+
+          <div class="form-group">
+            <label for="propertydamaged.repair_details">Details of the repair</label>
+            <div>
+              <textarea ng-model="propertydamaged.repair_details" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="propertydamaged.replacement_value">Value of the repair</label>
+            <div>
+              <input type="text" name="propertydamaged.repair_value" ng-model="propertydamaged.repair_value" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
 
       <input type="submit" value="Save" />
     </form>
