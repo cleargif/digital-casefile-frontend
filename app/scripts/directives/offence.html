@@ -14,11 +14,20 @@
       </div>
 
       <div class="form-group">
-        +charge_wording: String Structured offence wording from PNLD. (I’ll look this up for Retail theft when I have access to the CPS network).
+        <label for="offence.charge_wording">Charge Wording</label>
+        <blockquote>
+          <p>On [ SPECIFY DATE ] at [ SPECIFY TOWNSHIP ], stole [ SPECIFY THE ARTICLE ],</p>
+
+          <p>(A) [to the value of [ SPECIFY THE VALUE ],]<br/>
+          (B) [of a value unknown,]</p>
+
+          <p>belonging to [ SPECIFY THE PERSON]</p>
+
+        </blockquote>
       </div>
 
       <div class="form-group">
-        <label for="offence.signed_charge_sheet">“The defendant was given a copy of the MG4 charge and bail sheet and has signed it”</label>
+        <label for="offence.signed_charge_sheet">The defendant was given a copy of the MG4 charge and bail sheet and has signed it</label>
         <div>
           <label class="radio-inline">
             <input type="radio" name="offence.signed_charge_sheet" value="yes"
@@ -74,7 +83,7 @@
         </select>
       </div>
 
-      <input type="submit" value="Save" class="btn btn-success btn-sm" />
+      <input type="submit" value="Save" class="btn btn-success btn-sm" /><img ng-show="showspinner" src="images/spinner.gif" />
     </form>
   </div>
 </div>

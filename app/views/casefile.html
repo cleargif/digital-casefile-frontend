@@ -40,8 +40,8 @@
           <h3 class="panel-title">Pre-Questions</h3>
         </div>
         <div class="panel-body">
-          <precis data="casefile.blob.precis" urncode="casefile.urn_code" store="saveCtrl({precis: precis})"></precis>
-          <defendant data="casefile.blob.defendant" store="saveCtrl({defendant: defendant})"></defendant>
+          <precis data="casefile.blob.precis" showspinner="showspinner" urncode="casefile.urn_code" store="saveCtrl({precis: precis})"></precis>
+          <defendant data="casefile.blob.defendant" showspinner="showspinner" store="saveCtrl({defendant: defendant})"></defendant>
         </div>
       </div>
 
@@ -50,7 +50,7 @@
           <h3 class="panel-title">The Offence</h3>
         </div>
         <div class="panel-body">
-          <offence data="casefile.blob.offence" store="saveCtrl({offence: offence})"></offence>
+          <offence data="casefile.blob.offence" showspinner="showspinner" store="saveCtrl({offence: offence})"></offence>
         </div>
       </div>
 
@@ -59,13 +59,13 @@
           <h3 class="panel-title">Retail Theft</h3>
         </div>
         <div class="panel-body">
-          <propertydamaged data="casefile.blob.propertydamaged" store="saveCtrl({propertydamaged: propertydamaged})"></propertydamaged>
-          <propertystolen data="casefile.blob.propertystolen" store="saveCtrl({propertystolen: propertystolen})"></propertystolen>
-          <interview data="casefile.blob.interview" store="saveCtrl({interview: interview})"></interview>
-          <mme data="casefile.blob.mme" store="saveCtrl({mme: mme})"></mme>
-          <witness data="casefile.blob.witness" store="saveCtrl({witness: witness})"></witness>
-          <compensation data="casefile.blob.compensation" store="saveCtrl({compensation: compensation})"></compensation>
-          <courtorder data="casefile.blob.courtorder" store="saveCtrl({courtorder: courtorder})"></courtorder>
+          <propertydamaged data="casefile.blob.propertydamaged" showspinner="showspinner" store="saveCtrl({propertydamaged: propertydamaged})"></propertydamaged>
+          <propertystolen data="casefile.blob.propertystolen" showspinner="showspinner" store="saveCtrl({propertystolen: propertystolen})"></propertystolen>
+          <interview data="casefile.blob.interview" showspinner="showspinner" store="saveCtrl({interview: interview})"></interview>
+          <mme data="casefile.blob.mme" showspinner="showspinner" store="saveCtrl({mme: mme})"></mme>
+          <witness data="casefile.blob.witness" showspinner="showspinner" store="saveCtrl({witness: witness})"></witness>
+          <compensation data="casefile.blob.compensation" showspinner="showspinner" store="saveCtrl({compensation: compensation})"></compensation>
+          <courtorder data="casefile.blob.courtorder" showspinner="showspinner" store="saveCtrl({courtorder: courtorder})"></courtorder>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
           <h3 class="panel-title">Case Review</h3>
         </div>
         <div class="panel-body">
-          <disclosure data="casefile.blob.disclosure" store="saveCtrl({disclosure: disclosure})"></disclosure>
+          <disclosure data="casefile.blob.disclosure" showspinner="showspinner" store="saveCtrl({disclosure: disclosure})"></disclosure>
         </div>
       </div>
 
@@ -83,7 +83,7 @@
           <h3 class="panel-title">Sign-off</h3>
         </div>
         <div class="panel-body">
-          <signoff data="casefile.blob.signoff" store="saveCtrl({signoff: signoff})"></signoff>
+          <signoff data="casefile.blob.signoff" showspinner="showspinner" store="saveCtrl({signoff: signoff})"></signoff>
         </div>
       </div>
 

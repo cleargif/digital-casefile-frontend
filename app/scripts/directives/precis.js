@@ -14,7 +14,8 @@ angular.module('digitalCasefileApp')
       scope: {
         precis: '=data',
         urncode: '=urncode',
-        store: '&'
+        store: '&',
+        showspinner: '='
       },
       replace: true,
       link: function postLink() {

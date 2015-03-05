@@ -13,7 +13,8 @@ angular.module('digitalCasefileApp')
       restrict: 'E',
       scope: {
         offence: '=data',
-        store: '&'
+        store: '&',
+        showspinner: '='
       },
       replace: true,
       link: function postLink(scope) {
