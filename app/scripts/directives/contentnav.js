@@ -7,13 +7,13 @@
  * # contentnav
  */
 angular.module('digitalCasefileApp')
-  .directive('contentnav', function ($location, $anchorScroll) {
+  .directive('contentnav', function ( /* $location, $anchorScroll */ ) {
     return {
       templateUrl: 'scripts/directives/contentnav.html',
       restrict: 'E',
-      scope:{},
+      scope: {},
       replace: true,
-      link: function postLink(scope, element) {
+      link: function postLink(scope /*, element */ ) {
         //console.log('contentnav link', [$scope, $element, $attrs]);
         //
 
@@ -41,17 +41,17 @@ angular.module('digitalCasefileApp')
           sublevels: [{
             sectionName: 'Offence',
             anchor: 'offence'
-          }, {
-            sectionName: 'Property Damaged',
-            anchor: 'propertydamaged'
-          }, {
-            sectionName: 'Property Stolen',
-            anchor: 'propertystolen'
           }]
         }, {
           sectionName: 'Retail Theft',
           anchor: 'retail-theft',
           sublevels: [{
+            sectionName: 'Property Damaged',
+            anchor: 'propertydamaged'
+          }, {
+            sectionName: 'Property Stolen',
+            anchor: 'propertystolen'
+          }, {
             sectionName: 'Interview',
             anchor: 'interview'
           }, {
