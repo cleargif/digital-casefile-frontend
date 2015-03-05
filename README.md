@@ -1,8 +1,8 @@
 # digital-casefile
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.1.
-
+[Front-end](https://dcf-frontend.herokuapps.com) written by [David Plews](https://github.com/cleargif),
+[API](https://dcf-backend.herokuapp.com/case_files/) written by [Stephen Richards](https://github.com/stephenrichards)
+ 
 ## Requirements
 
 The usual suspects: Node, Bower
@@ -35,3 +35,7 @@ Run `grunt build` for building
 ## Deploy
 
 Run `grunt deploy` will build the app, commit and push the `dist` folder to heroku
+
+
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.11.1.
