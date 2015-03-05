@@ -1,7 +1,7 @@
 # digital-casefile
 
-[Front-end](https://dcf-frontend.herokuapps.com) written by [David Plews](https://github.com/cleargif),
-[API](https://dcf-backend.herokuapp.com/case_files/) written by [Stephen Richards](https://github.com/stephenrichards)
+[dcf-frontend.herokuapp.com](https://dcf-frontend.herokuapp.com) written by [David Plews](https://github.com/cleargif),
+[dcf-backend.herokuapp.com](https://dcf-backend.herokuapp.com/case_files/) written by [Stephen Richards](https://github.com/stephenrichards)
  
 ## Requirements
 
