@@ -9,7 +9,7 @@ The usual suspects: Node, Bower
 
 Other:
 - [Yeoman](http://yeoman.io/),
-- Yeoman Angular Generator `npm install -g generator-angular`,
+- [Yeoman Angular Generator](https://github.com/yeoman/generator-angular) `npm install -g generator-angular`,
 - [Heroku Toolbelt](https://toolbelt.heroku.com/)
 
 
