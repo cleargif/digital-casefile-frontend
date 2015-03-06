@@ -15,15 +15,21 @@
 
       <div class="form-group">
         <label for="offence.charge_wording">Charge Wording</label>
-        <blockquote>
-          <p>On [ SPECIFY DATE ] at [ SPECIFY TOWNSHIP ], stole [ SPECIFY THE ARTICLE ],</p>
+        <div class="form-inline">
 
-          <p>(A) [to the value of [ SPECIFY THE VALUE ],]<br/>
+          <p>
+          On <input type="text" class="form-control" placeholder="MM/DD/YYYY" id="offence.charge_wording_date" ng-model="offence.charge_wording_date"> at <input type="text" class="form-control" placeholder="Township" id="offence.charge_wording_township" ng-model="offence.charge_wording_township">,
+          </p>
+          <p>
+           stole <input type="text" class="form-control" placeholder="Item discription" id="offence.charge_wording_item_stolen" ng-model="offence.charge_wording_item_stolen">,
+          </p>
+
+          <p>(A) [to the value of <input type="text" placeholder="Item value" class="form-control" id="offence.charge_wording_value" ng-model="offence.charge_wording_value">,]<br/>
           (B) [of a value unknown,]</p>
 
-          <p>belonging to [ SPECIFY THE PERSON]</p>
+          <p>belonging to <input type="text" class="form-control" placeholder="Victim" id="offence.charge_wording_victim" ng-model="offence.charge_wording_victim"></p>
 
-        </blockquote>
+        </div>
       </div>
 
       <div class="form-group">
