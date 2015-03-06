@@ -1,7 +1,4 @@
 <ul id="aside" class="list-group">
-  <li class="list-group-item btn" data-anchor="closeall">
-    Close all
-  </li>
   <li class="list-group-item" ng-repeat="toplevel in sections" data-anchor="{{toplevel.anchor}}">
     {{toplevel.sectionName}}
     <ul ng-if="toplevel.sublevels.length">

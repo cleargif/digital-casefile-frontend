@@ -17,14 +17,14 @@ angular.module('digitalCasefileApp')
         //console.log('contentnav link', [$scope, $element, $attrs]);
         //
 
-        scope.closeAll = function () {
-          angular.element('.panel-wrapper').is(function (idx, el) {
-            var $el = angular.element(el).find('.panel-body');
-            if ($el.is(':visible')) {
-              $el.hide();
-            }
-          });
-        };
+        // scope.closeAll = function () {
+        //   angular.element('.panel-wrapper').is(function (idx, el) {
+        //     var $el = angular.element(el).find('.panel-body');
+        //     if ($el.is(':visible')) {
+        //       $el.hide();
+        //     }
+        //   });
+        // };
         scope.sections = [{
           sectionName: 'Pre-Questions',
           anchor: 'pre-questions',
